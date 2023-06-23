@@ -1,5 +1,5 @@
 <a href="https://soliditynirvana.com">
-  <img alt="Logo" src="https://imgur.com/MOpkFtY">
+  <img alt="Logo" src="https://i.imgur.com/MOpkFtY.png">
   <h1 align="center">SolidityNirvana</h1>
 </a>
 
