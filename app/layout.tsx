@@ -7,18 +7,18 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
 export const metadata = {
-  title: "Precedent - Building blocks for your Next.js project",
+  title: "SolidityNirvana",
   description:
-    "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+    "The ultimate guide to Solidity",
   twitter: {
     card: "summary_large_image",
-    title: "Precedent - Building blocks for your Next.js project",
+    title: "SolidityNirvana",
     description:
-      "Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
-    creator: "@steventey",
+      "The ultimate guide to Solidity",
+    creator: "@SolidityNirvana",
   },
-  metadataBase: new URL("https://precedent.dev"),
-  themeColor: "#FFF",
+  metadataBase: new URL("https://soliditynirvana.com"),
+  themeColor: "#000",
 };
 
 export default async function RootLayout({
