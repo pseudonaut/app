@@ -26,7 +26,7 @@ export default async function OG() {
         }}
       >
         <img
-          src={new URL("../public/SNLogoClear.png", import.meta.url).toString()}
+          src={new URL("../public/SNLogoClearSmaller.png", import.meta.url).toString()}
           alt="SolidityNirvana Logo"
           tw="w-20 h-20 mb-4 opacity-95"
         />
@@ -47,8 +47,8 @@ export default async function OG() {
       </div>
     ),
     {
-      width: 1000,
-      height: 525,
+      width: 1200,
+      height: 630,
       fonts: [
         {
           name: "SF Pro",
