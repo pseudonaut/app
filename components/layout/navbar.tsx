@@ -26,8 +26,8 @@ export default function NavBar({ session }: { session: Session | null }) {
             <Image
               src="/SNLogoClear.png"
               alt="SN logo"
-              width="30"
-              height="30"
+              width="45"
+              height="45"
               className="mr-2 rounded-sm"
             ></Image>
             <p>SolidityNirvana</p>
