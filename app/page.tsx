@@ -125,7 +125,7 @@ const features = [
   {
     title: "Student Discounts",
     description:
-      "Students at participating colleges receive major discounts, applications are open",
+      "Students are eligible to receive discounts, we aim to foster the next generation of engineers",
     demo: (
       <div className="grid grid-flow-col grid-rows-3 gap-10 p-10 text-center">
         <span className="font-mono">MIT</span>
