@@ -22,7 +22,7 @@ export default async function OG() {
           justifyContent: "center",
           backgroundColor: "white",
           backgroundImage:
-            "linear-gradient(to bottom right, #EE9F27 20%, #ffffff 10%, #5DBB63 70%)",
+            "linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%)",
         }}
       >
         <img
