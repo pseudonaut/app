@@ -47,8 +47,8 @@ export default async function OG() {
       </div>
     ),
     {
-      width: 900,
-      height: 475,
+      width: 1200,
+      height: 630,
       fonts: [
         {
           name: "SF Pro",
