@@ -28,7 +28,7 @@ export default async function OG() {
         <img
           src={new URL("../public/SNLogoClearSmaller.png", import.meta.url).toString()}
           alt="SolidityNirvana Logo"
-          tw="w-70 h-40 mb-4 opacity-95"
+          tw="w-49 h-28 mb-4 opacity-95"
         />
         <h1
           style={{
