@@ -115,7 +115,7 @@ const features = [
   {
     title: "Worldclass Expertise",
     description:
-      "From developers that have built live protocols and architected large systems",
+      "From developers that have built live protocols and architected scalable financial systems",
     demo: (
       <div className="flex items-center justify-center space-x-20">
         <Image alt="Auth.js logo" src="/SNLogoClear.png" width={150} height={150} />
