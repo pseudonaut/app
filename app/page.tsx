@@ -26,29 +26,41 @@ export default async function Home() {
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <a
-          href="https://twitter.com/SolidityNirvana"
-          target="_blank"
-          rel="noreferrer"
-          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-blue-100 px-7 py-2 transition-colors hover:bg-blue-200"
+        <br />
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
         >
-          <Twitter className="h-5 w-5 text-[#1d9bf0]" />
-          <p className="text-sm font-semibold text-[#1d9bf0]">
-            Follow us (@SolidityNirvana)
-          </p>
-        </a>
+          <Image
+            src="/SNLogoClear.png"
+            alt="SN logo"
+            width="300"
+            height="300"
+            className="animate-fade-up"
+            style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
+          ></Image>
+        </div>
+        <br />
         <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-green-800 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
+          className="animate-fade-up bg-gradient-to-br from-black to-green-600 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>Solidity Nirvana is the ultimate guide.</Balancer>
+          <Balancer>Solidity Nirvana</Balancer>
         </h1>
+        <h3
+          className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-2xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-3xl md:leading-[5rem]"
+          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
+        >
+          <Balancer>The ultimate guide to solidity.</Balancer>
+        </h3>
         <p
           className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
           style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
         >
           <Balancer>
-            50+ episodes, 500+ puzzles, and 1,000+ scenarios
+            More than 50 episodes, 500 puzzles, and 1,000 examples
           </Balancer>
         </p>
         <div
@@ -84,6 +96,18 @@ export default async function Home() {
             </p>
           </a>
         </div>
+        <br />
+        {/* <a
+          href="https://twitter.com/SolidityNirvana"
+          target="_blank"
+          rel="noreferrer"
+          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-orange-200 px-7 py-2 transition-colors hover:bg-orange-400"
+        >
+          <Twitter className="h-5 w-5 text-[#000]" />
+          <p className="text-sm font-semibold text-[#000]">
+            Follow us (@SolidityNirvana)
+          </p>
+        </a> */}
       </div>
       <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo }) => (
@@ -106,34 +130,57 @@ export default async function Home() {
 }
 
 const features = [
-  {
-    title: "Track Performance",
-    description:
-      "Track your progress across all difficulties to achieve full comprehension",
-    demo: <WebVitals />,
-  },
+  // {
+  //   title: "Track Performance",
+  //   description:
+  //     "Track your progress across all difficulties to achieve full comprehension",
+  //   demo: <WebVitals />,
+  // },
   {
     title: "Worldclass Expertise",
     description:
-      "From developers that have built live protocols and architected scalable financial systems",
+      "From developers that have built live protocols and architected scalable financial systems; SolidityNirvana is built by professionals, for professionals",
     demo: (
       <div className="flex items-center justify-center space-x-20">
-        <Image alt="Auth.js logo" src="/SNLogoClear.png" width={150} height={150} />
+          <Image
+            style={{ borderRadius: '50%', overflow: 'hidden' }}
+            src="/knowledge.png"
+            alt="From Within"
+            width="200"
+            height="200"
+          ></Image>
+      </div>
+    ),
+  },
+  {
+    title: "Slow & Steady",
+    description:
+      "We will guide you on your path to enlightenment, ensuring you achieve full comprehension along the way and providing valuable support where needed",
+    demo: (
+      <div className="flex items-center justify-center space-x-20">
+          <Image
+            style={{ borderRadius: '50%', overflow: 'hidden' }}
+            src="/nature.png"
+            alt="From Within"
+            width="200"
+            height="200"
+          ></Image>
       </div>
     ),
   },
   {
     title: "Student Discounts",
     description:
-      "Students are eligible to receive discounts, we aim to foster the next generation of engineers",
+      "Students are eligible for discounts; our goal is to foster the next generation of talented and well-trained engineers",
     demo: (
-      <div className="grid grid-flow-col grid-rows-3 gap-10 p-10 text-center">
-        <span className="font-mono">MIT</span>
-        <span className="font-mono">Stanford</span>
-        <span className="font-mono">NYU</span>
-        <span className="font-mono">ASU</span>
-        <span className="font-mono">Cornell</span>
-        <span className="font-mono">Princeton</span>
+      <div className="flex items-center justify-center space-x-20">
+          <Image
+            style={{ borderRadius: '50%', overflow: 'hidden' }}
+            src="/school.png"
+            alt="From Within"
+            width="200"
+            height="200"
+          ></Image>
       </div>
     ),
   },
