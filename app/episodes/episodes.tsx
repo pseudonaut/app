@@ -11,13 +11,13 @@ import ComponentGrid from "@/components/home/component-grid";
 import Turning from "@/components/shared/turning";
 
 export default function Episodes({ session }: { session: Session | null }) {
-  
-  if (!session) return <Generic />;
 
   const [difficulty, setDifficulty] = useState('Introduction');
   const [episode, setEpisode] = useState('none');
   const [episodeNumber, setEpisodeNumber] = useState('none');
   const [image, setImage] = useState('none');
+  
+  if (!session) return <Generic />;
 
   const introEpisodes = [
     {
@@ -160,7 +160,7 @@ export default function Episodes({ session }: { session: Session | null }) {
             
             <div className="my-10 grid w-full max-w-screen-xl md:grid-cols-3">
               {difficulty === 'Introduction' && episode === 'none' && introEpisodes.map(({ title, description, image }, index) => (
-                <div onClick={() => {setEpisode(title); setImage(image); setEpisodeNumber(String(index + 1));}}>
+                <div key={title} onClick={() => {setEpisode(title); setImage(image); setEpisodeNumber(String(index + 1));}}>
                   <CardEpisode
                     key={title}
                     title={title}
@@ -172,7 +172,7 @@ export default function Episodes({ session }: { session: Session | null }) {
               ))}
 
               {difficulty === 'Easy' && episode === 'none' && easyEpisodes.map(({ title, description, image }, index) => (
-                <div onClick={() => {setEpisode(title); setImage(image); setEpisodeNumber(String(index + 1));}}>
+                <div key={title} onClick={() => {setEpisode(title); setImage(image); setEpisodeNumber(String(index + 1));}}>
                   <CardEpisode
                     key={title}
                     title={title}
