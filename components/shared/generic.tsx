@@ -2,14 +2,9 @@
 
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
-import Link from "next/link";
-import { Session } from "next-auth";
-import Generic from "@/components/shared/generic";
 
-export default function Dashboard({ session }: { session: Session | null }) {
+export default function Generic() {
   
-  if (!session) return <Generic />;
-
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
