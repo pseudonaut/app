@@ -53,11 +53,11 @@ export default async function Home() {
           className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-2xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-3xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>The ultimate guide to solidity.</Balancer>
+          <Balancer>The ultimate guide to Solidity.</Balancer>
         </h3>
         <p
           className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
-          style={{ animationDelay: "0.25s", animationFillMode: "forwards" }}
+          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>
             More than 50 episodes, 500 puzzles, and 1,000 examples
@@ -65,7 +65,7 @@ export default async function Home() {
         </p>
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
-          style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
+          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
@@ -84,7 +84,7 @@ export default async function Home() {
           >
             <Github />
             <p>
-              <span className="hidden sm:inline-block">Medium (WIP)</span>
+              <span className="hidden sm:inline-block">Medium - WIP</span>
             </p>
           </a>
           <a
@@ -92,7 +92,7 @@ export default async function Home() {
           >
             <Github />
             <p>
-              <span className="hidden sm:inline-block">Hard (WIP)</span>
+              <span className="hidden sm:inline-block">Hard - WIP</span>
             </p>
           </a>
         </div>
