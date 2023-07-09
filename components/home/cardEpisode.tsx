@@ -7,11 +7,13 @@ import Turning from "../shared/turning";
 export default function CardEpisode({
   title,
   episodeNumber,
+  difficulty,
   description,
   image,
   large,
 }: {
   title: string;
+  difficulty: string;
   episodeNumber: Number;
   description: string;
   image: string;
@@ -25,9 +27,9 @@ export default function CardEpisode({
       }`}
     >
       <div className="mx-auto max-w-md text-center pb-2">
-        <h2 className="bg-gradient-to-br from-black to-grey-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-xl md:font-normal">
+        <h2 className="bg-gradient-to-br from-black to-zinc-400 bg-clip-text font-display text-xl font-bold text-transparent md:text-xl md:font-normal">
           <Balancer>
-            #{String(episodeNumber)}
+            #{String(episodeNumber)} | {difficulty}
           </Balancer>
         </h2>
       </div>
@@ -41,7 +43,7 @@ export default function CardEpisode({
         />  
       </div>
       <div className="mx-auto max-w-md text-center">
-        <h2 className="bg-gradient-to-br from-black to-red-900 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
+        <h2 className="bg-gradient-to-br from-black to-green-600 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
           <Balancer>
             {title}
           </Balancer>

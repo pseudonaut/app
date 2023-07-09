@@ -59,7 +59,7 @@ export default function Episodes({ session }: { session: Session | null }) {
     <>
       <div className="z-10">
 
-        <div className="my-10 grid w-full max-w-screen-xl grid-cols-1 gap-5 px-5 md:grid-cols-5 xl:px-0">
+        <div className="my-10 grid w-full max-w-screen-xl grid-cols-1 px-5 md:grid-cols-5 xl:px-0">
           <div>
             <div>
               <div
@@ -107,7 +107,7 @@ export default function Episodes({ session }: { session: Session | null }) {
             </div>
           </div>
 
-          <div className="col-span-4">
+          <div className="col-span-4 p-5">
 
             {episode !== 'none' && <div>
               <div className="grid grid-cols-4 gap-4">
@@ -120,7 +120,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                     height="250"
                   />
                 </div>
-                <div>
+                <div className="text-ellipsis">
                   <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                     <Balancer>
                       #{episodeNumber}
@@ -150,7 +150,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                     className="float-right rounded-full border border-black bg-green-200 p-1.5 px-4 text-sm text-black transition-all hover:bg-transparent hover:text-black"
                     onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none");}}
                   >
-                    {'<='} Back
+                    Go Back
                   </button>
                 </div>
                 
@@ -164,6 +164,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                   <CardEpisode
                     key={title}
                     title={title}
+                    difficulty={difficulty}
                     description={description}
                     episodeNumber={index + 1}
                     image={image}
@@ -176,6 +177,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                   <CardEpisode
                     key={title}
                     title={title}
+                    difficulty={difficulty}
                     description={description}
                     episodeNumber={index + 1}
                     image={image}
