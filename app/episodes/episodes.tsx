@@ -9,6 +9,8 @@ import { Session } from "next-auth";
 import Generic from "@/components/shared/generic";
 import ComponentGrid from "@/components/home/component-grid";
 import Turning from "@/components/shared/turning";
+import ReactPlayer from 'react-player';
+import "./player.css";
 
 export default function Episodes({ session }: { session: Session | null }) {
 
@@ -154,6 +156,17 @@ export default function Episodes({ session }: { session: Session | null }) {
                   </button>
                 </div>
                 
+              </div>
+              <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+              <div className="player-wrapper">
+                <ReactPlayer
+                  url="https://storage.cloud.google.com/solidity_nirvana/Crystal%20Bowl%20Royalty%20Free%20Music_%20Royalty%20Free%20Meditation%20Music%20_%20Singing%20Bowls.mp4"
+                  className="react-player"
+                  playing
+                  width="100%"
+                  height="100%"
+                  controls={true}
+                />
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
             </div>}
