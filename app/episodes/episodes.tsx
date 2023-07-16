@@ -21,10 +21,10 @@ export default function Episodes({ session }: { session: Session | null }) {
   const [episodeNumber, setEpisodeNumber] = useState('none');
   const [image, setImage] = useState('none');
   const [video, setVideo] = useState('Episode');
-  
-  if (!session) return <Generic />;
 
   const playerRef = useRef(null);
+  
+  if (!session) return <Generic />;
 
   const introEpisodes = [
     {
