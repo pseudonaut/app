@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import React, { useRef } from 'react';
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 import CardEpisode from "@/components/home/cardEpisode";
@@ -10,6 +11,7 @@ import Generic from "@/components/shared/generic";
 import ComponentGrid from "@/components/home/component-grid";
 import Turning from "@/components/shared/turning";
 import ReactPlayer from 'react-player';
+import CodeBlock from "@/components/shared/codeBlock";
 import "./player.css";
 
 export default function Episodes({ session }: { session: Session | null }) {
@@ -18,6 +20,9 @@ export default function Episodes({ session }: { session: Session | null }) {
   const [episode, setEpisode] = useState('none');
   const [episodeNumber, setEpisodeNumber] = useState('none');
   const [image, setImage] = useState('none');
+  const [video, setVideo] = useState('Episode');
+
+  const playerRef = useRef<ReactPlayer>(null);
   
   if (!session) return <Generic />;
 
@@ -56,6 +61,12 @@ export default function Episodes({ session }: { session: Session | null }) {
       description: "Examines the int, uint, bool, bytes, and other primitives"
     }
   ];
+
+  const handleSeekTo = (time: number) => {
+    if (playerRef.current) {
+      playerRef.current.seekTo(time, 'seconds');
+    }
+  };
 
   return (
     <>
@@ -125,7 +136,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                 <div className="text-ellipsis">
                   <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                     <Balancer>
-                      #{episodeNumber}
+                      #{episodeNumber} | {difficulty}
                     </Balancer>
                   </h2>
                   <h2 className="bg-gradient-to-br from-black to-green-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-4xl md:font-normal">
@@ -135,40 +146,184 @@ export default function Episodes({ session }: { session: Session | null }) {
                   </h2>
                   <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-2xl md:font-normal">
                     <Balancer>
-                      {difficulty}
+                      {video}
                     </Balancer>
                   </h2>
                 </div>
                 <div>
+                </div>
+                <div>
+                  <div>
+                    <button
+                      className="float-right relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                      onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setVideo("Episode")}}
+                    >
+                      <span
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                      ></span>
+                      <span className="relative block border border-current bg-white px-3 py-2">
+                         Back
+                      </span>
+                    </button>
+                  </div>
                   
-                  <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-2xl md:font-normal">
-                    <Balancer>
-                      
-                    </Balancer>
-                  </h2>
-                </div>
-                <div>
-                  <button
-                    className="float-right rounded-full border border-black bg-green-200 p-1.5 px-4 text-sm text-black transition-all hover:bg-transparent hover:text-black"
-                    onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none");}}
-                  >
-                    Go Back
-                  </button>
+                  <div>
+                  {video === 'Episode' &&
+                      <button
+                        className="float-right relative inline-block m-2 text-sm font-medium text-blue-700 focus:outline-none focus:ring active:text-indigo-500"
+                        onClick={() => setVideo("Solutions")}
+                      >
+                      <span
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-blue-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                      ></span>
+                      <span className="relative block border border-current bg-white px-3 py-2">
+                         See Solutions
+                      </span>
+                    </button>
+                  }
+                  
+                  {video === 'Solutions' &&
+                      <button
+                        className="float-right relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
+                        onClick={() => setVideo("Episode")}
+                      >
+                      <span
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                      ></span>
+                      <span className="relative block border border-current bg-white px-3 py-2">
+                         Watch Episode
+                      </span>
+                    </button>
+                  }
+                  </div>
+
                 </div>
                 
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
               <div className="player-wrapper">
-                <ReactPlayer
-                  url="https://storage.cloud.google.com/solidity_nirvana/Crystal%20Bowl%20Royalty%20Free%20Music_%20Royalty%20Free%20Meditation%20Music%20_%20Singing%20Bowls.mp4"
-                  className="react-player"
-                  playing
-                  width="100%"
-                  height="100%"
-                  controls={true}
-                />
+                {/* <button onClick={() => handleSeekTo(30)}>Seek to 30 seconds</button>
+                <button onClick={() => handleSeekTo(60)}>Seek to 60 seconds</button> */}
+                {video === 'Episode' &&
+                  <ReactPlayer
+                    url="https://storage.cloud.google.com/solidity_nirvana/Crystal%20Bowl%20Royalty%20Free%20Music_%20Royalty%20Free%20Meditation%20Music%20_%20Singing%20Bowls.mp4"
+                    className="react-player"
+                    playing
+                    width="100%"
+                    height="100%"
+                    controls={true}
+                    ref={playerRef}
+                    config={{ file: { 
+                      attributes: {
+                        controlsList: 'nodownload'
+                      }
+                    }}}
+                  />
+                }
+                {video === 'Solutions' &&
+                  <ReactPlayer
+                    url="https://storage.cloud.google.com/solidity_nirvana/Crystal%20Bowl%20Royalty%20Free%20Music_%20Royalty%20Free%20Meditation%20Music%20_%20Singing%20Bowls.mp4"
+                    className="react-player"
+                    playing
+                    width="100%"
+                    height="100%"
+                    controls={true}
+                    ref={playerRef}
+                    config={{ file: { 
+                      attributes: {
+                        controlsList: 'nodownload'
+                      }
+                    }}}
+                  />
+                }
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+              
+              <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
+                <Balancer>
+                  Agenda
+                </Balancer>
+              </h2>
+              <span>
+                <button
+                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                  onClick={() => handleSeekTo(15)}
+                >
+                  <span
+                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                  ></span>
+                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                    Introduction - 0:15
+                  </span>
+                </button>
+                {' ... '}
+              </span>
+              <span>
+                <button
+                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                  onClick={() => handleSeekTo(45)}
+                >
+                  <span
+                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                  ></span>
+                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                    int Type - 0:45
+                  </span>
+                </button>
+                {' ... '}
+              </span>
+              <span>
+                <button
+                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                  onClick={() => handleSeekTo(175)}
+                >
+                  <span
+                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                  ></span>
+                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                    uint Type - 2:55
+                  </span>
+                </button>
+                {' ... '}
+              </span>
+              <span>
+                <button
+                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                  onClick={() => handleSeekTo(235)}
+                >
+                  <span
+                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                  ></span>
+                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                    bool Type - 3:55
+                  </span>
+                </button>
+                {' ... '}
+              </span>
+              <span>
+                <button
+                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                  onClick={() => handleSeekTo(295)}
+                >
+                  <span
+                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                  ></span>
+                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                    bytes Type - 4:55
+                  </span>
+                </button>
+              </span>
+              <br />
+              <br />
+
+              <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
+                <Balancer>
+                  Foundry
+                </Balancer>
+              </h2>
+              <CodeBlock code={'forge test --match "(scenarios)"'}/>
+              <CodeBlock code={'forge test --match "(puzzles)"'}/>
+              
             </div>}
             
             <div className="my-10 grid w-full max-w-screen-xl md:grid-cols-3">
