@@ -155,7 +155,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                 <div>
                   <div>
                     <button
-                      className="float-right relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                      className="float-right group relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
                       onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setVideo("Episode")}}
                     >
                       <span
@@ -170,7 +170,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                   <div>
                   {video === 'Episode' &&
                       <button
-                        className="float-right relative inline-block m-2 text-sm font-medium text-blue-700 focus:outline-none focus:ring active:text-indigo-500"
+                        className="float-right group relative inline-block m-2 text-sm font-medium text-blue-700 focus:outline-none focus:ring active:text-indigo-500"
                         onClick={() => setVideo("Solutions")}
                       >
                       <span
@@ -184,7 +184,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                   
                   {video === 'Solutions' &&
                       <button
-                        className="float-right relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
+                        className="float-right group relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
                         onClick={() => setVideo("Episode")}
                       >
                       <span
@@ -241,7 +241,7 @@ export default function Episodes({ session }: { session: Session | null }) {
               
               <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                 <Balancer>
-                  Agenda
+                  Agenda | {video}
                 </Balancer>
               </h2>
               <span>
