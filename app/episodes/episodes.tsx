@@ -22,7 +22,7 @@ export default function Episodes({ session }: { session: Session | null }) {
   const [image, setImage] = useState('none');
   const [video, setVideo] = useState('Episode');
 
-  const playerRef = useRef(null);
+  const playerRef = useRef<ReactPlayer>(null);
   
   if (!session) return <Generic />;
 
@@ -62,7 +62,7 @@ export default function Episodes({ session }: { session: Session | null }) {
     }
   ];
 
-  const handleSeekTo = (time: Number) => {
+  const handleSeekTo = (time: number) => {
     if (playerRef.current) {
       playerRef.current.seekTo(time, 'seconds');
     }
