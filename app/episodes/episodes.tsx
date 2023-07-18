@@ -1,17 +1,19 @@
 "use client";
 
-import { useState } from "react";
 import React, { useRef } from 'react';
+import { useState } from "react";
+import { Session } from "next-auth";
+
+import ReactPlayer from 'react-player';
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
+
 import CardEpisode from "@/components/home/cardEpisode";
-import Link from "next/link";
-import { Session } from "next-auth";
 import Generic from "@/components/shared/generic";
-import ComponentGrid from "@/components/home/component-grid";
-import Turning from "@/components/shared/turning";
-import ReactPlayer from 'react-player';
 import CodeBlock from "@/components/shared/codeBlock";
+import Turning from "@/components/shared/turning";
+
+import { introEpisodes, easyEpisodes } from "./episodesList";
 import "./player.css";
 
 export default function Episodes({ session }: { session: Session | null }) {
@@ -21,46 +23,13 @@ export default function Episodes({ session }: { session: Session | null }) {
   const [episodeNumber, setEpisodeNumber] = useState('none');
   const [image, setImage] = useState('none');
   const [video, setVideo] = useState('Episode');
+  const [videoUrl, setVideoUrl] = useState('none');
+  const [timestampsEpisode, setTimestampsEpisode] = useState<{ description: string; timestampString: string; timestampNumber: number; }[]>([]);
+  const [timestampsSolutions, setTimestampsSolutions] = useState<{ description: string; timestampString: string; timestampNumber: number; }[]>([]);
 
   const playerRef = useRef<ReactPlayer>(null);
   
   if (!session) return <Generic />;
-
-  const introEpisodes = [
-    {
-      title: "Coding Environment",
-      image: "/waterfall.png",
-      description: "Learn about the coding environment (foundry-rs, IDEs, CLI, etc.)"
-    },
-    {
-      title: "Github",
-      image: "/lotus.png",
-      description: "Explore the fundamentals of Github for version control and branch management"
-    },
-    {
-      title: "foundry-rs",
-      image: "/pose.png",
-      description: "A more thorough review of foundry-rs functionality and essential tools"
-    },
-  ]
-
-  const easyEpisodes = [
-    {
-      title: "Introduction",
-      image: "/pose2.png",
-      description: "A brief overview of how this course works, and the different sections"
-    },
-    {
-      title: "Fundamentals",
-      image: "/school.png",
-      description: "The absolute fundamentals of Solidity, an introduction to types"
-    },
-    {
-      title: "Primitive Types",
-      image: "/waterfall.png",
-      description: "Examines the int, uint, bool, bytes, and other primitives"
-    }
-  ];
 
   const handleSeekTo = (time: number) => {
     if (playerRef.current) {
@@ -94,24 +63,24 @@ export default function Episodes({ session }: { session: Session | null }) {
 
               <ul className="mt-6 space-y-1">
                 <li>
-                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Introduction');}}>
+                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Introduction'); setVideo("Episode");}}>
                     <summary
                       className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
                       style={{backgroundColor: difficulty === 'Introduction' ? '#bbf7d0' : ''}}
                     >
-                      <span className="text-sm font-medium"> <b>[0/5] Introduction</b></span>
+                      <span className="text-sm font-medium"> <b>Introduction</b></span>
                       <Turning />
                     </summary>
                   </details>
                 </li>
 
                 <li>
-                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy');}}>
+                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy'); setVideo("Episode");}}>
                     <summary
                       className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
                       style={{backgroundColor: difficulty === 'Easy' ? '#bbf7d0' : ''}}
                     >
-                      <span className="text-sm font-medium"> <b>[0/20] Easy</b></span>
+                      <span className="text-sm font-medium"> <b>Easy</b></span>
                       <Turning />
                     </summary>
                   </details>
@@ -155,7 +124,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                 <div>
                   <div>
                     <button
-                      className="float-right relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                      className="float-right group relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
                       onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setVideo("Episode")}}
                     >
                       <span
@@ -170,11 +139,11 @@ export default function Episodes({ session }: { session: Session | null }) {
                   <div>
                   {video === 'Episode' &&
                       <button
-                        className="float-right relative inline-block m-2 text-sm font-medium text-blue-700 focus:outline-none focus:ring active:text-indigo-500"
+                        className="float-right group relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
                         onClick={() => setVideo("Solutions")}
                       >
                       <span
-                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-blue-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
                       ></span>
                       <span className="relative block border border-current bg-white px-3 py-2">
                          See Solutions
@@ -184,11 +153,11 @@ export default function Episodes({ session }: { session: Session | null }) {
                   
                   {video === 'Solutions' &&
                       <button
-                        className="float-right relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
+                        className="float-right group relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
                         onClick={() => setVideo("Episode")}
                       >
                       <span
-                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
                       ></span>
                       <span className="relative block border border-current bg-white px-3 py-2">
                          Watch Episode
@@ -202,11 +171,9 @@ export default function Episodes({ session }: { session: Session | null }) {
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
               <div className="player-wrapper">
-                {/* <button onClick={() => handleSeekTo(30)}>Seek to 30 seconds</button>
-                <button onClick={() => handleSeekTo(60)}>Seek to 60 seconds</button> */}
                 {video === 'Episode' &&
                   <ReactPlayer
-                    url="https://storage.cloud.google.com/solidity_nirvana/Crystal%20Bowl%20Royalty%20Free%20Music_%20Royalty%20Free%20Meditation%20Music%20_%20Singing%20Bowls.mp4"
+                    url={videoUrl}
                     className="react-player"
                     playing
                     width="100%"
@@ -222,7 +189,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                 }
                 {video === 'Solutions' &&
                   <ReactPlayer
-                    url="https://storage.cloud.google.com/solidity_nirvana/Crystal%20Bowl%20Royalty%20Free%20Music_%20Royalty%20Free%20Meditation%20Music%20_%20Singing%20Bowls.mp4"
+                    url={videoUrl}
                     className="react-player"
                     playing
                     width="100%"
@@ -241,78 +208,45 @@ export default function Episodes({ session }: { session: Session | null }) {
               
               <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                 <Balancer>
-                  Agenda
+                {video} Agenda
                 </Balancer>
               </h2>
-              <span>
-                <button
-                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                  onClick={() => handleSeekTo(15)}
-                >
-                  <span
-                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
-                  ></span>
-                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                    Introduction - 0:15
+              {
+                video === 'Episode' && timestampsEpisode.map(({ description, timestampString, timestampNumber }, index) => (
+                  <span key={index}>
+                    <button
+                      className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
+                      onClick={() => handleSeekTo(timestampNumber)}
+                    >
+                      <span
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                      ></span>
+                      <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                        <b>{description}</b> - {timestampString}
+                      </span>
+                    </button>
+                    {index + 1 !== timestampsEpisode.length && ' ... '}
                   </span>
-                </button>
-                {' ... '}
-              </span>
-              <span>
-                <button
-                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                  onClick={() => handleSeekTo(45)}
-                >
-                  <span
-                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
-                  ></span>
-                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                    int Type - 0:45
+                ))
+              }
+              {
+                video === 'Solutions' && timestampsSolutions.map(({ description, timestampString, timestampNumber }, index) => (
+                  <span key={index}>
+                    <button
+                      className="group relative inline-block my-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
+                      onClick={() => handleSeekTo(timestampNumber)}
+                    >
+                      <span
+                        className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
+                      ></span>
+                      <span className="relative block border border-current bg-white p-4 px-4 py-3">
+                        <b>{description}</b> - {timestampString}
+                      </span>
+                    </button>
+                    {index + 1 !== timestampsSolutions.length && ' ... '}
                   </span>
-                </button>
-                {' ... '}
-              </span>
-              <span>
-                <button
-                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                  onClick={() => handleSeekTo(175)}
-                >
-                  <span
-                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
-                  ></span>
-                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                    uint Type - 2:55
-                  </span>
-                </button>
-                {' ... '}
-              </span>
-              <span>
-                <button
-                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                  onClick={() => handleSeekTo(235)}
-                >
-                  <span
-                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
-                  ></span>
-                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                    bool Type - 3:55
-                  </span>
-                </button>
-                {' ... '}
-              </span>
-              <span>
-                <button
-                  className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                  onClick={() => handleSeekTo(295)}
-                >
-                  <span
-                    className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
-                  ></span>
-                  <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                    bytes Type - 4:55
-                  </span>
-                </button>
-              </span>
+                ))
+              }
               <br />
               <br />
 
@@ -327,8 +261,15 @@ export default function Episodes({ session }: { session: Session | null }) {
             </div>}
             
             <div className="my-10 grid w-full max-w-screen-xl md:grid-cols-3">
-              {difficulty === 'Introduction' && episode === 'none' && introEpisodes.map(({ title, description, image }, index) => (
-                <div key={title} onClick={() => {setEpisode(title); setImage(image); setEpisodeNumber(String(index + 1));}}>
+              {difficulty === 'Introduction' && episode === 'none' && introEpisodes.map(({ title, description, image, episodeUrl, episodeTimestamps, solutionsTimestamp }, index) => (
+                <div key={title} onClick={() => {
+                  setEpisode(title); 
+                  setImage(image); 
+                  setEpisodeNumber(String(index + 1));
+                  setVideoUrl(episodeUrl);
+                  setTimestampsEpisode(episodeTimestamps);
+                  setTimestampsSolutions(solutionsTimestamp);
+                }}>
                   <CardEpisode
                     key={title}
                     title={title}
@@ -340,8 +281,15 @@ export default function Episodes({ session }: { session: Session | null }) {
                 </div>
               ))}
 
-              {difficulty === 'Easy' && episode === 'none' && easyEpisodes.map(({ title, description, image }, index) => (
-                <div key={title} onClick={() => {setEpisode(title); setImage(image); setEpisodeNumber(String(index + 1));}}>
+              {difficulty === 'Easy' && episode === 'none' && easyEpisodes.map(({ title, description, image, episodeUrl, episodeTimestamps, solutionsTimestamp }, index) => (
+                <div key={title} onClick={() => {
+                  setEpisode(title); 
+                  setImage(image); 
+                  setEpisodeNumber(String(index + 1));
+                  setVideoUrl(episodeUrl);
+                  setTimestampsEpisode(episodeTimestamps);
+                  setTimestampsSolutions(solutionsTimestamp);
+                }}>
                   <CardEpisode
                     key={title}
                     title={title}
