@@ -8,6 +8,8 @@ import Generic from "@/components/shared/generic";
 
 export default function Dashboard({ session }: { session: Session | null }) {
   
+  const { email, image } = session?.user || {};
+
   if (!session) return <Generic />;
 
   return (
@@ -38,7 +40,7 @@ export default function Dashboard({ session }: { session: Session | null }) {
           className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-2xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-3xl md:leading-[5rem]"
           style={{ animationFillMode: "forwards" }}
         >
-          <Balancer>The ultimate guide to Solidity.</Balancer>
+          <Balancer>{email}</Balancer>
         </h3>
       </div>
     </>

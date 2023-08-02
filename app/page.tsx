@@ -5,8 +5,16 @@ import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
+import Enroll from "@/components/home/enroll";
+
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+
 
 export default async function Home() {
+
+  const session = await getServerSession(authOptions);
+
   const { stargazers_count: stars } = await fetch(
     "https://api.github.com/repos/solidity-nirvana/easy",
     {
@@ -124,6 +132,11 @@ export default async function Home() {
             }
           />
         ))}
+      </div>
+      <br />
+      <br />
+      <div>
+        <Enroll session={session} />
       </div>
     </>
   );
