@@ -41,7 +41,6 @@ export default function Dashboard({ session }: { session: Session | null }) {
           style={{ animationFillMode: "forwards" }}
         >
           <Balancer>{email}</Balancer>
-          <Balancer>{email}</Balancer>
         </h3>
       </div>
     </>
