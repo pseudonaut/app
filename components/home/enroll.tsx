@@ -186,7 +186,7 @@ export default function Enroll({ session }: { session: Session | null }) {
   
   else return (
     <div className="relative text-left max-w-xl">
-      <section className="overflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
+      <section className="verflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
         <img
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex0]}
@@ -214,7 +214,7 @@ export default function Enroll({ session }: { session: Session | null }) {
           </p>
 
           <h2 className="mt-6 font-black uppercase">
-            <span className="text-4-xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
+            <span className="text-4xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
               SOLIDITY NIRVANA
             </span>
           </h2>
