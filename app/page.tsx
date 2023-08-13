@@ -24,8 +24,8 @@ export default async function Home() {
           "Content-Type": "application/json",
         },
       }),
-      // data will revalidate every 24 hours
-      next: { revalidate: 86400 },
+      // data will revalidate every 12 hours
+      next: { revalidate: 86400 / 2 },
     },
   )
     .then((res) => res.json())
