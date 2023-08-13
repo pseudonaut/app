@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 import Stripe from 'stripe';
-import { subMinutes } from 'date-fns';
 import dbConnect from 'lib/dbConnect'
 import User from "models/User";
 
@@ -16,13 +15,13 @@ export async function GET(request: NextRequest) {
         
         await dbConnect();
 
-        const fiveMinutesAgo = subMinutes(new Date(), 5);
+        const fiveMinutesAgoTimestamp = new Date().getTime() - 5 * 60 * 1000;
 
         const events = await stripe.events.list({
             type: 'payment_intent.succeeded', // Change this to the event type you want to retrieve
             limit: 100,
             created: {
-                gte: Math.floor(fiveMinutesAgo.getTime() / 1000), // Convert to seconds
+                gte: Math.floor(fiveMinutesAgoTimestamp / 1000), // Convert to seconds
             },
         });
 
