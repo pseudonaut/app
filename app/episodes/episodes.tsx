@@ -16,7 +16,7 @@ import Turning from "@/components/shared/turning";
 import { introEpisodes, easyEpisodes } from "./episodesList";
 import "./player.css";
 
-export default function Episodes({ session }: { session: Session | null }) {
+export default function Episodes({ session, membership }: { session: Session | null, membership: string }) {
 
   const [difficulty, setDifficulty] = useState('Introduction');
   const [episode, setEpisode] = useState('none');
@@ -58,7 +58,7 @@ export default function Episodes({ session }: { session: Session | null }) {
               <br />
 
               <span className="grid h-10 place-content-center rounded-lg bg-orange-300 text-x">
-                <b>Episodes</b>
+                <b>Episodes - {membership}</b>
               </span>
 
               <ul className="mt-6 space-y-1">
@@ -171,8 +171,8 @@ export default function Episodes({ session }: { session: Session | null }) {
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
               <div className="player-wrapper">
-                {video === 'Episode' &&
-                  <ReactPlayer
+                {
+                  video === 'Episode' && <ReactPlayer
                     url={videoUrl}
                     className="react-player"
                     playing
@@ -187,8 +187,8 @@ export default function Episodes({ session }: { session: Session | null }) {
                     }}}
                   />
                 }
-                {video === 'Solutions' &&
-                  <ReactPlayer
+                {
+                  video === 'Solutions' && <ReactPlayer
                     url={videoUrl}
                     className="react-player"
                     playing
@@ -203,6 +203,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                     }}}
                   />
                 }
+                
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
               
@@ -269,6 +270,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                   setVideoUrl(episodeUrl);
                   setTimestampsEpisode(episodeTimestamps);
                   setTimestampsSolutions(solutionsTimestamp);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}>
                   <CardEpisode
                     key={title}
@@ -289,6 +291,7 @@ export default function Episodes({ session }: { session: Session | null }) {
                   setVideoUrl(episodeUrl);
                   setTimestampsEpisode(episodeTimestamps);
                   setTimestampsSolutions(solutionsTimestamp);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}>
                   <CardEpisode
                     key={title}
