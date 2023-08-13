@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
     
     try {
         
+        // Connect to DB
         await dbConnect();
 
         const fiveMinutesAgoTimestamp = new Date().getTime() - 5 * 60 * 1000;
