@@ -64,8 +64,6 @@ export async function GET(request: NextRequest) {
 
         return NextResponse.json(
             {
-                body: events,
-                emails: emails,
                 path: request.nextUrl.pathname
             },
             {
