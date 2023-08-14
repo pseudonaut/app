@@ -21,8 +21,10 @@ export default function Episodes({ session, membership }: { session: Session | n
   const [difficulty, setDifficulty] = useState('Introduction');
   const [episode, setEpisode] = useState('none');
   const [episodeNumber, setEpisodeNumber] = useState('none');
+  const [episodeVideo, setEpisodeVideo] = useState('none');
+  const [solutionVideo, setSolutionVideo] = useState('none');
   const [image, setImage] = useState('none');
-  const [video, setVideo] = useState('Episode');
+  const [mode, setMode] = useState('Episode');
   const [videoUrl, setVideoUrl] = useState('none');
   const [timestampsEpisode, setTimestampsEpisode] = useState<{ description: string; timestampString: string; timestampNumber: number; }[]>([]);
   const [timestampsSolutions, setTimestampsSolutions] = useState<{ description: string; timestampString: string; timestampNumber: number; }[]>([]);
@@ -36,6 +38,13 @@ export default function Episodes({ session, membership }: { session: Session | n
       playerRef.current.seekTo(time, 'seconds');
     }
   };
+
+  async function fetchSignedUrl(episodeName: string) {
+    const response = await fetch(`/api/signedUrl?episodeName=${episodeName}`);
+    const data = await response.json();
+    setVideoUrl(data.signedUrl);
+  }
+
 
   return (
     <>
@@ -63,7 +72,7 @@ export default function Episodes({ session, membership }: { session: Session | n
 
               <ul className="mt-6 space-y-1">
                 <li>
-                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Introduction'); setVideo("Episode");}}>
+                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Introduction'); setMode("Episode");}}>
                     <summary
                       className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
                       style={{backgroundColor: difficulty === 'Introduction' ? '#bbf7d0' : ''}}
@@ -75,7 +84,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                 </li>
 
                 <li>
-                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy'); setVideo("Episode");}}>
+                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy'); setMode("Episode");}}>
                     <summary
                       className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
                       style={{backgroundColor: difficulty === 'Easy' ? '#bbf7d0' : ''}}
@@ -115,7 +124,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                   </h2>
                   <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-2xl md:font-normal">
                     <Balancer>
-                      {video}
+                      {mode}
                     </Balancer>
                   </h2>
                 </div>
@@ -125,7 +134,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                   <div>
                     <button
                       className="float-right group relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                      onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setVideo("Episode")}}
+                      onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setMode("Episode")}}
                     >
                       <span
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
@@ -137,10 +146,10 @@ export default function Episodes({ session, membership }: { session: Session | n
                   </div>
                   
                   <div>
-                  {video === 'Episode' &&
+                  {mode === 'Episode' &&
                       <button
                         className="float-right group relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
-                        onClick={() => setVideo("Solutions")}
+                        onClick={() => { setMode("Solutions"); setVideoUrl(''); fetchSignedUrl(solutionVideo); }}
                       >
                       <span
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
@@ -151,10 +160,10 @@ export default function Episodes({ session, membership }: { session: Session | n
                     </button>
                   }
                   
-                  {video === 'Solutions' &&
+                  {mode === 'Solutions' &&
                       <button
                         className="float-right group relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                        onClick={() => setVideo("Episode")}
+                        onClick={() => { setMode("Solutions"); setVideoUrl(''); fetchSignedUrl(episodeVideo); }}
                       >
                       <span
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
@@ -171,24 +180,9 @@ export default function Episodes({ session, membership }: { session: Session | n
               </div>
               <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
               <div className="player-wrapper">
+
                 {
-                  video === 'Episode' && <ReactPlayer
-                    url={videoUrl}
-                    className="react-player"
-                    playing
-                    width="100%"
-                    height="100%"
-                    controls={true}
-                    ref={playerRef}
-                    config={{ file: { 
-                      attributes: {
-                        controlsList: 'nodownload'
-                      }
-                    }}}
-                  />
-                }
-                {
-                  video === 'Solutions' && <ReactPlayer
+                  videoUrl !== '' && (mode === 'Episode' || mode === 'Solutions') && <ReactPlayer
                     url={videoUrl}
                     className="react-player"
                     playing
@@ -209,11 +203,11 @@ export default function Episodes({ session, membership }: { session: Session | n
               
               <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                 <Balancer>
-                {video} Agenda
+                {mode} Agenda
                 </Balancer>
               </h2>
               {
-                video === 'Episode' && timestampsEpisode.map(({ description, timestampString, timestampNumber }, index) => (
+                mode === 'Episode' && timestampsEpisode.map(({ description, timestampString, timestampNumber }, index) => (
                   <span key={index}>
                     <button
                       className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
@@ -231,7 +225,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                 ))
               }
               {
-                video === 'Solutions' && timestampsSolutions.map(({ description, timestampString, timestampNumber }, index) => (
+                mode === 'Solutions' && timestampsSolutions.map(({ description, timestampString, timestampNumber }, index) => (
                   <span key={index}>
                     <button
                       className="group relative inline-block my-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
@@ -262,14 +256,17 @@ export default function Episodes({ session, membership }: { session: Session | n
             </div>}
             
             <div className="my-10 grid w-full max-w-screen-xl md:grid-cols-3">
-              {difficulty === 'Introduction' && episode === 'none' && introEpisodes.map(({ title, description, image, episodeUrl, episodeTimestamps, solutionsTimestamp }, index) => (
+              {difficulty === 'Introduction' && episode === 'none' && introEpisodes.map(({ title, description, image, episodeVideo, solutionsVideo, episodeTimestamps, solutionsTimestamp }, index) => (
                 <div key={title} onClick={() => {
-                  setEpisode(title); 
+                  setVideoUrl('');
+                  setEpisode(title);
+                  setEpisodeVideo(episodeVideo);
+                  setSolutionVideo(solutionsVideo);
                   setImage(image); 
                   setEpisodeNumber(String(index + 1));
-                  setVideoUrl(episodeUrl);
                   setTimestampsEpisode(episodeTimestamps);
                   setTimestampsSolutions(solutionsTimestamp);
+                  fetchSignedUrl(episodeVideo);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}>
                   <CardEpisode
@@ -283,14 +280,17 @@ export default function Episodes({ session, membership }: { session: Session | n
                 </div>
               ))}
 
-              {difficulty === 'Easy' && episode === 'none' && easyEpisodes.map(({ title, description, image, episodeUrl, episodeTimestamps, solutionsTimestamp }, index) => (
+              {difficulty === 'Easy' && episode === 'none' && easyEpisodes.map(({ title, description, image, episodeVideo, solutionsVideo, episodeTimestamps, solutionsTimestamp }, index) => (
                 <div key={title} onClick={() => {
+                  setVideoUrl('');
                   setEpisode(title); 
+                  setEpisodeVideo(episodeVideo);
+                  setSolutionVideo(solutionsVideo);
                   setImage(image); 
                   setEpisodeNumber(String(index + 1));
-                  setVideoUrl(episodeUrl);
                   setTimestampsEpisode(episodeTimestamps);
                   setTimestampsSolutions(solutionsTimestamp);
+                  fetchSignedUrl(episodeVideo);
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}>
                   <CardEpisode
