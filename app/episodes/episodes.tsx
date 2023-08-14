@@ -224,6 +224,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                   </span>
                 ))
               }
+              
               {
                 mode === 'Solutions' && timestampsSolutions.map(({ description, timestampString, timestampNumber }, index) => (
                   <span key={index}>
