@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/server";
+import Image from "next/image";
 
 export const runtime = "edge";
 export const alt = "SolidityNirvana - The ultimate guide to Solidity";
@@ -25,10 +26,11 @@ export default async function OG() {
             "linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%)",
         }}
       >
-        <img
+        <Image
           src={new URL("../public/SNLogoClearSmaller.png", import.meta.url).toString()}
           alt="SolidityNirvana Logo"
           tw="w-45 h-25 mb-4 opacity-95"
+          fill={true}
         />
         <h1
           style={{

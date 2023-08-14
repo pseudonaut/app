@@ -13,6 +13,9 @@ export default function Enroll({ session }: { session: Session | null }) {
 
   const { SignInModal, setShowSignInModal } = useSignInModal();
 
+  const [width, setWidth] = useState(150)
+  const [height, setHeight] = useState(150)
+
   const [currentIndex0, setCurrentIndex0] = useState(0);
   const [currentIndex1, setCurrentIndex1] = useState(0);
   const [currentIndex2, setCurrentIndex2] = useState(0);
@@ -43,25 +46,33 @@ export default function Enroll({ session }: { session: Session | null }) {
     <div className="relative text-left max-w-xl">
       <SignInModal />
       <section className="overflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex0]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex1]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex2]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex3]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
 
         <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
@@ -87,25 +98,33 @@ export default function Enroll({ session }: { session: Session | null }) {
           </p>
         </div>
 
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex4]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex5]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex6]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex7]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
       </section>
     </div>
@@ -114,25 +133,33 @@ export default function Enroll({ session }: { session: Session | null }) {
   if (email.includes('.edu')) return (
     <div className="relative text-left max-w-xl">
       <section className="overflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex0]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex1]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex2]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex3]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
 
         <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
@@ -160,25 +187,33 @@ export default function Enroll({ session }: { session: Session | null }) {
           </p>
         </div>
 
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex4]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex5]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex6]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex7]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
       </section>
     </div>
@@ -187,25 +222,33 @@ export default function Enroll({ session }: { session: Session | null }) {
   else return (
     <div className="relative text-left max-w-xl">
       <section className="verflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex0]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex1]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex2]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex3]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
 
         <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
@@ -233,25 +276,33 @@ export default function Enroll({ session }: { session: Session | null }) {
           </p>
         </div>
 
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex4]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex5]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex6]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
-        <img
+        <Image
           alt="Trainer"
           src={imageSequence_01.rotation[currentIndex7]}
           className="h-32 w-full object-cover md:h-full"
+          width={width}
+          height={height}
         />
       </section>
     </div>
