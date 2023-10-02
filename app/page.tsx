@@ -1,57 +1,57 @@
 import Card from "@/components/home/card";
 import Balancer from "react-wrap-balancer";
-import { Github } from "@/components/shared/icons";
+import { Github, Twitter } from "@/components/shared/icons";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 import Enroll from "@/components/home/enroll";
 
-// import dbConnect from 'lib/dbConnect'
-// import User from "models/User";
+import dbConnect from 'lib/dbConnect'
+import User from "models/User";
 
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 
-// async function fetchData() {
-//   await dbConnect();
+async function fetchData() {
+  await dbConnect();
   
-//   // Get the session from the context
-//   const session = await getServerSession(authOptions);
+  // Get the session from the context
+  const session = await getServerSession(authOptions);
 
-//   if (!session || !session.user || !session.user.name) {
-//     return { status: false, membership: 'Free' };
-//   }
+  if (!session || !session.user || !session.user.name) {
+    return { status: false, membership: 'Free' };
+  }
 
-//   /* find data based on session.username in our database */
-//   const result = await User.findOne({ email: session.user.email });
+  /* find data based on session.username in our database */
+  const result = await User.findOne({ email: session.user.email });
 
-//   if (!result) {
+  if (!result) {
 
-//     // User not found, create and insert a new user
-//     const newUser = new User({
-//       email: session.user.email,
-//       membership: 'Free'
-//     });
+    // User not found, create and insert a new user
+    const newUser = new User({
+      email: session.user.email,
+      membership: 'Free'
+    });
 
-//     try {
-//       const savedUser = await newUser.save();
-//       return { status: false, membership: savedUser.membership };
-//     } catch (error) {
-//       console.error('Error creating and saving user:', error);
-//       return { status: false, membership: 'Free' };
-//     }
+    try {
+      const savedUser = await newUser.save();
+      return { status: false, membership: savedUser.membership };
+    } catch (error) {
+      console.error('Error creating and saving user:', error);
+      return { status: false, membership: 'Free' };
+    }
 
-//   }
-//   else {
-//     return {status: false, membership: result.membership};
-//   }
+  }
+  else {
+    return {status: false, membership: result.membership};
+  }
 
-// }
+}
 
 export default async function Home() {
 
-  // const member = await fetchData();
+  const member = await fetchData();
   const session = await getServerSession(authOptions);
 
   const { stargazers_count: stars } = await fetch(
@@ -143,16 +143,16 @@ export default async function Home() {
             </p>
           </a>
         </div>
-        <br />
-        {/* <a
+        {/* <br />
+        <a
           href="https://twitter.com/SolidityNirvana"
           target="_blank"
           rel="noreferrer"
-          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-orange-200 px-7 py-2 transition-colors hover:bg-orange-400"
+          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-gray-200 px-7 py-2 transition-colors hover:bg-blue-300"
         >
           <Twitter className="h-5 w-5 text-[#000]" />
           <p className="text-sm font-semibold text-[#000]">
-            Follow us (@SolidityNirvana)
+            @SolidityNirvana
           </p>
         </a> */}
       </div>
@@ -175,8 +175,8 @@ export default async function Home() {
       <br />
       <br />
       <div>
-        {/* <Enroll session={session} membership={member.membership} /> */}
-        <Enroll session={session} />
+        <Enroll session={session} membership={member.membership} />
+        {/* <Enroll session={session} /> */}
       </div>
     </>
   );
