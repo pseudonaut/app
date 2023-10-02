@@ -1,7 +1,6 @@
 import Card from "@/components/home/card";
 import Balancer from "react-wrap-balancer";
 import { Github, Twitter } from "@/components/shared/icons";
-import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
@@ -144,16 +143,16 @@ export default async function Home() {
             </p>
           </a>
         </div>
-        <br />
-        {/* <a
+        {/* <br />
+        <a
           href="https://twitter.com/SolidityNirvana"
           target="_blank"
           rel="noreferrer"
-          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-orange-200 px-7 py-2 transition-colors hover:bg-orange-400"
+          className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 overflow-hidden rounded-full bg-gray-200 px-7 py-2 transition-colors hover:bg-blue-300"
         >
           <Twitter className="h-5 w-5 text-[#000]" />
           <p className="text-sm font-semibold text-[#000]">
-            Follow us (@SolidityNirvana)
+            @SolidityNirvana
           </p>
         </a> */}
       </div>
@@ -177,18 +176,13 @@ export default async function Home() {
       <br />
       <div>
         <Enroll session={session} membership={member.membership} />
+        {/* <Enroll session={session} /> */}
       </div>
     </>
   );
 }
 
 const features = [
-  // {
-  //   title: "Track Performance",
-  //   description:
-  //     "Track your progress across all difficulties to achieve full comprehension",
-  //   demo: <WebVitals />,
-  // },
   {
     title: "Worldclass Expertise",
     description:

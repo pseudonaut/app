@@ -5,7 +5,7 @@ import { AlignStartHorizontal, Video, LogOut } from "lucide-react";
 import Popover from "@/components/shared/popover";
 import Image from "next/image";
 import { Session } from "next-auth";
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { imageSequence_01 } from "./enrollRotation";
 import { useSignInModal } from "../layout/sign-in-modal";
 
@@ -24,21 +24,6 @@ export default function Enroll({ session, membership }: { session: Session | nul
   const [currentIndex5, setCurrentIndex5] = useState(0);
   const [currentIndex6, setCurrentIndex6] = useState(0);
   const [currentIndex7, setCurrentIndex7] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeout(() => { setCurrentIndex0((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 1);
-      setTimeout(() => { setCurrentIndex1((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 2);
-      setTimeout(() => { setCurrentIndex2((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 3);
-      setTimeout(() => { setCurrentIndex3((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 4);
-      setTimeout(() => { setCurrentIndex4((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 5);
-      setTimeout(() => { setCurrentIndex5((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 6);
-      setTimeout(() => { setCurrentIndex6((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 7);
-      setTimeout(() => { setCurrentIndex7((prevIndex) => (prevIndex + 1) % imageSequence_01.rotation.length); }, 100 * 8);
-    }, imageSequence_01.interval);
-
-    return () => clearInterval(timer);
-  }, []);
 
   const { email, image } = session?.user || {};
 
@@ -175,8 +160,7 @@ export default function Enroll({ session, membership }: { session: Session | nul
 
           <a
             className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
-            href={"https://enroll.soliditynirvana.com/b/cN25nfeXc9nrglq3cf?prefilled_email=" + email}
-            target="_blank"
+            href={"/episodes"}
             rel="noreferrer"
           >
             BEGIN LEARNING
