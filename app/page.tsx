@@ -7,12 +7,52 @@ import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
 import Enroll from "@/components/home/enroll";
 
+import dbConnect from 'lib/dbConnect'
+import User from "models/User";
+
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 
+async function fetchData() {
+  await dbConnect();
+  
+  // Get the session from the context
+  const session = await getServerSession(authOptions);
+
+  if (!session || !session.user || !session.user.name) {
+    return { status: false, membership: 'Free' };
+  }
+
+  /* find data based on session.username in our database */
+  const result = await User.findOne({ email: session.user.email });
+
+  if (!result) {
+
+    // User not found, create and insert a new user
+    const newUser = new User({
+      email: session.user.email,
+      membership: 'Free'
+    });
+
+    try {
+      const savedUser = await newUser.save();
+      return { status: false, membership: savedUser.membership };
+    } catch (error) {
+      console.error('Error creating and saving user:', error);
+      return { status: false, membership: 'Free' };
+    }
+
+  }
+  else {
+    return {status: false, membership: result.membership};
+  }
+
+}
+
 export default async function Home() {
 
+  const member = await fetchData();
   const session = await getServerSession(authOptions);
 
   const { stargazers_count: stars } = await fetch(
@@ -136,7 +176,7 @@ export default async function Home() {
       <br />
       <br />
       <div>
-        <Enroll session={session} />
+        <Enroll session={session} membership={member.membership} />
       </div>
     </>
   );
