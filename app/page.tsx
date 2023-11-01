@@ -1,6 +1,6 @@
 import Card from "@/components/home/card";
 import Balancer from "react-wrap-balancer";
-import { Github, Twitter } from "@/components/shared/icons";
+import { Github, Twitter, Discord } from "@/components/shared/icons";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
@@ -107,31 +107,37 @@ export default async function Home() {
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 hover:bg-gray-100"
             href="https://github.com/Solidity-Nirvana/Easy"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Github />
             <p>
-              <span className="hidden sm:inline-block">Easy {' - '}</span> {' '}
+              <span className="hidden sm:inline-block">Github {' - '}</span> {' '}
               <span className="font-semibold">{nFormatter(stars)} Stars</span>
             </p>
           </a>
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-gray-200 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-1 text-sm text-slate-600 shadow-md transition-colors hover:bg-purple-100 hover:border-gray-800"
+            href="https://discord.gg/uUJkMHYngH"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Github />
+            <Discord />
             <p>
-              <span className="hidden sm:inline-block">Medium - WIP</span>
+              <span className="hidden sm:inline-block">Discord</span>
             </p>
           </a>
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-gray-200 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-sky-300 hover:text-gray-900 hover:border-gray-800"
+            href="https://twitter.com/soliditynirvana"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <Github />
+            <Twitter />
             <p>
-              <span className="hidden sm:inline-block">Hard - WIP</span>
+              <span className="hidden sm:inline-block">@SolidityNirvana</span>
             </p>
           </a>
         </div>
