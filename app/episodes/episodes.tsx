@@ -18,7 +18,7 @@ import "./player.css";
 
 export default function Episodes({ session, membership }: { session: Session | null, membership: string }) {
 
-  const [difficulty, setDifficulty] = useState('Introduction');
+  const [difficulty, setDifficulty] = useState('Easy');
   const [episode, setEpisode] = useState('none');
   const [episodeNumber, setEpisodeNumber] = useState('none');
   const [episodeVideo, setEpisodeVideo] = useState('none');
@@ -71,7 +71,7 @@ export default function Episodes({ session, membership }: { session: Session | n
               </span>
 
               <ul className="mt-6 space-y-1">
-                <li>
+                {/* <li>
                   <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Introduction'); setMode("Episode");}}>
                     <summary
                       className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
@@ -81,7 +81,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                       <Turning />
                     </summary>
                   </details>
-                </li>
+                </li> */}
 
                 <li>
                   <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy'); setMode("Episode");}}>
@@ -145,7 +145,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                     </button>
                   </div>
                   
-                  <div>
+                  {/* <div>
                   {mode === 'Episode' &&
                       <button
                         className="float-right group relative inline-block m-2 text-sm font-medium text-orange-700 focus:outline-none focus:ring active:text-indigo-500"
@@ -173,7 +173,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                       </span>
                     </button>
                   }
-                  </div>
+                  </div> */}
 
                 </div>
                 
@@ -245,13 +245,13 @@ export default function Episodes({ session, membership }: { session: Session | n
               <br />
               <br />
 
-              <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
+              {/* <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                 <Balancer>
                   Foundry
                 </Balancer>
               </h2>
               <CodeBlock code={'forge test --match "(scenarios)"'}/>
-              <CodeBlock code={'forge test --match "(puzzles)"'}/>
+              <CodeBlock code={'forge test --match "(puzzles)"'}/> */}
               
             </div>}
             
