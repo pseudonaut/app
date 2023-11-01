@@ -126,7 +126,7 @@ export default async function Home() {
           >
             <Discord />
             <p>
-              <span className="hidden sm:inline-block">Discord</span>
+              <span className="hidden sm:inline-block">Discord Dojo</span>
             </p>
           </a>
           <a
@@ -146,7 +146,7 @@ export default async function Home() {
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>
-            Join below, receive updates for our January launch!
+            Enroll below, receive updates for our January launch!
           </Balancer>
         </p>
         {/* <br />
