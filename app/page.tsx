@@ -146,7 +146,7 @@ export default async function Home() {
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>
-            Enroll below, receive updates for our January launch!
+            Enroll below, receive updates for our 2024 launch!
           </Balancer>
         </p>
         {/* <br />
