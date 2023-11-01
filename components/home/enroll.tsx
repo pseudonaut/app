@@ -62,7 +62,7 @@ export default function Enroll({ session, membership }: { session: Session | nul
 
         <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
           <p className="text-sm font-semibold uppercase tracking-widest">
-            Enroll Today
+            2 Free Episodes - Start Your Journey
           </p>
 
           <h2 className="mt-6 font-black uppercase">
@@ -75,11 +75,11 @@ export default function Enroll({ session, membership }: { session: Session | nul
             className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
             onClick={() => setShowSignInModal(true)}
           >
-            LOGIN
+            ENROLL - FREE
           </button>
 
           <p className="mt-8 text-xs font-medium uppercase text-gray-400">
-            Awaken your mind. Realize your potential.
+            Awaken your mind. Realize your potential. Join our newsletter.
           </p>
         </div>
 
@@ -115,7 +115,10 @@ export default function Enroll({ session, membership }: { session: Session | nul
     </div>
   );
 
-  else if (membership == 'Paid') return (
+
+  // else if (membership == 'Free') return (
+
+  else return (
     <div className="relative text-left max-w-xl">
       <section className="overflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
         <Image
@@ -203,182 +206,182 @@ export default function Enroll({ session, membership }: { session: Session | nul
     </div>
   )
 
-  else if (email.includes('.edu')) return (
-    <div className="relative text-left max-w-xl">
-      <section className="overflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex0]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex1]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex2]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex3]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
+  // else if (email.includes('.edu')) return (
+  //   <div className="relative text-left max-w-xl">
+  //     <section className="overflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex0]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex1]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex2]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex3]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
 
-        <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
-          <p className="text-sm font-semibold uppercase tracking-widest">
-            Enroll Today
-          </p>
+  //       <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
+  //         <p className="text-sm font-semibold uppercase tracking-widest">
+  //           Enroll Today
+  //         </p>
 
-          <h2 className="mt-6 font-black uppercase">
-            <span className="text-4-xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
-              SOLIDITY NIRVANA
-            </span>
-          </h2>
+  //         <h2 className="mt-6 font-black uppercase">
+  //           <span className="text-4-xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
+  //             SOLIDITY NIRVANA
+  //           </span>
+  //         </h2>
 
-          <a
-            className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
-            href={"https://enroll.soliditynirvana.com/b/cN25nfeXc9nrglq3cf?prefilled_email=" + email}
-            target="_blank"
-            rel="noreferrer"
-          >
-            ENROLL
-          </a>
+  //         <a
+  //           className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
+  //           href={"https://enroll.soliditynirvana.com/b/cN25nfeXc9nrglq3cf?prefilled_email=" + email}
+  //           target="_blank"
+  //           rel="noreferrer"
+  //         >
+  //           ENROLL
+  //         </a>
 
-          <p className="mt-8 text-xs font-medium uppercase text-gray-400">
-            Awaken your mind. Realize your potential.
-          </p>
-        </div>
+  //         <p className="mt-8 text-xs font-medium uppercase text-gray-400">
+  //           Awaken your mind. Realize your potential.
+  //         </p>
+  //       </div>
 
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex4]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex5]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex6]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex7]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-      </section>
-    </div>
-  );
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex4]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex5]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex6]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex7]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //     </section>
+  //   </div>
+  // );
   
-  else return (
-    <div className="relative text-left max-w-xl">
-      <section className="verflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex0]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex1]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex2]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex3]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
+  // else return (
+  //   <div className="relative text-left max-w-xl">
+  //     <section className="verflow-hidden rounded-lg shadow-2xl drop-shadow-2xl md:grid md:grid-cols-4">
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex0]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex1]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex2]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex3]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
 
-        <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
-          <p className="text-sm font-semibold uppercase tracking-widest">
-            Enroll Today
-          </p>
+  //       <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
+  //         <p className="text-sm font-semibold uppercase tracking-widest">
+  //           Enroll Today
+  //         </p>
 
-          <h2 className="mt-6 font-black uppercase">
-            <span className="text-4xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
-              SOLIDITY NIRVANA
-            </span>
-          </h2>
+  //         <h2 className="mt-6 font-black uppercase">
+  //           <span className="text-4xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
+  //             SOLIDITY NIRVANA
+  //           </span>
+  //         </h2>
 
-          <a
-            className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
-            href={"https://enroll.soliditynirvana.com/b/14kcPHg1garv5GM6oq?prefilled_email=" + email}
-            target="_blank"
-            rel="noreferrer"
-          >
-            ENROLL
-          </a>
+  //         <a
+  //           className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
+  //           href={"https://enroll.soliditynirvana.com/b/14kcPHg1garv5GM6oq?prefilled_email=" + email}
+  //           target="_blank"
+  //           rel="noreferrer"
+  //         >
+  //           ENROLL
+  //         </a>
 
-          <p className="mt-8 text-xs font-medium uppercase text-gray-400">
-            Awaken your mind. Realize your potential.
-          </p>
-        </div>
+  //         <p className="mt-8 text-xs font-medium uppercase text-gray-400">
+  //           Awaken your mind. Realize your potential.
+  //         </p>
+  //       </div>
 
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex4]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex5]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex6]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-        <Image
-          alt="Trainer"
-          src={imageSequence_01.rotation[currentIndex7]}
-          className="h-32 w-full object-cover md:h-full"
-          width={width}
-          height={height}
-        />
-      </section>
-    </div>
-  );
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex4]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex5]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex6]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //       <Image
+  //         alt="Trainer"
+  //         src={imageSequence_01.rotation[currentIndex7]}
+  //         className="h-32 w-full object-cover md:h-full"
+  //         width={width}
+  //         height={height}
+  //       />
+  //     </section>
+  //   </div>
+  // );
 
 }

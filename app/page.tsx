@@ -102,14 +102,6 @@ export default async function Home() {
         >
           <Balancer>The ultimate guide to Solidity.</Balancer>
         </h3>
-        <p
-          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
-          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
-        >
-          <Balancer>
-            More than 50 episodes, 500 puzzles, and 1,000 examples
-          </Balancer>
-        </p>
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
@@ -143,6 +135,14 @@ export default async function Home() {
             </p>
           </a>
         </div>
+        <p
+          className="mt-6 animate-fade-up text-center text-gray-500 opacity-0 md:text-xl"
+          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
+        >
+          <Balancer>
+            Join below, receive updates for our January launch!
+          </Balancer>
+        </p>
         {/* <br />
         <a
           href="https://twitter.com/SolidityNirvana"
