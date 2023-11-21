@@ -12,8 +12,10 @@ import User from "models/User";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
+import {getTranslations} from 'next-intl/server';
 
 async function fetchData() {
+
   await dbConnect();
   
   // Get the session from the context
@@ -51,8 +53,57 @@ async function fetchData() {
 
 export default async function Home() {
 
+  const t = await getTranslations('Home');
   const member = await fetchData();
   const session = await getServerSession(authOptions);
+
+  const features = [
+    {
+      title: t('Worldclass Expertise'),
+      description: t('From developers'),
+      demo: (
+        <div className="flex items-center justify-center space-x-20">
+            <Image
+              style={{ borderRadius: '50%', overflow: 'hidden' }}
+              src="/knowledge.png"
+              alt="From Within"
+              width="200"
+              height="200"
+            ></Image>
+        </div>
+      ),
+    },
+    {
+      title: t('Slow & Steady'),
+      description: t('We will guide'),
+      demo: (
+        <div className="flex items-center justify-center space-x-20">
+            <Image
+              style={{ borderRadius: '50%', overflow: 'hidden' }}
+              src="/nature.png"
+              alt="From Within"
+              width="200"
+              height="200"
+            ></Image>
+        </div>
+      ),
+    },
+    {
+      title: t('Student Discounts'),
+      description: t('Students are eligible'),
+      demo: (
+        <div className="flex items-center justify-center space-x-20">
+            <Image
+              style={{ borderRadius: '50%', overflow: 'hidden' }}
+              src="/school.png"
+              alt="From Within"
+              width="200"
+              height="200"
+            ></Image>
+        </div>
+      ),
+    },
+  ];
 
   const { stargazers_count: stars } = await fetch(
     "https://api.github.com/repos/solidity-nirvana/easy",
@@ -94,50 +145,51 @@ export default async function Home() {
           className="animate-fade-up bg-gradient-to-br from-black to-green-600 bg-clip-text text-center font-display text-4xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-7xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>Solidity Nirvana</Balancer>
+          <Balancer>{t('Solidity Nirvana')}</Balancer>
         </h1>
         <h3
           className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-2xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-3xl md:leading-[5rem]"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>The ultimate guide to Solidity.</Balancer>
+          <Balancer>{t('Ultimate')}</Balancer>
         </h3>
         <div
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 hover:bg-gray-100"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-400 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 hover:bg-gray-100"
             href="https://github.com/Solidity-Nirvana/Easy"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Github />
             <p>
-              <span className="hidden sm:inline-block">Github {' - '}</span> {' '}
-              <span className="font-semibold">{nFormatter(stars)} Stars</span>
+              <span className="hidden sm:inline-block">Github</span>
+              {/* {' '}
+              <span className="font-semibold">{nFormatter(stars)} ⭐</span> */}
             </p>
           </a>
           <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-1 text-sm text-slate-600 shadow-md transition-colors hover:bg-purple-100 hover:border-gray-800"
-            href="https://discord.gg/uUJkMHYngH"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Discord />
-            <p>
-              <span className="hidden sm:inline-block">Discord Dojo</span>
-            </p>
-          </a>
-          <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-sky-300 hover:text-gray-900 hover:border-gray-800"
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-400 bg-sky-200 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:bg-sky-300 hover:text-gray-900 hover:border-gray-800"
             href="https://twitter.com/soliditynirvana"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Twitter />
             <p>
-              <span className="hidden sm:inline-block">@SolidityNirvana</span>
+              <span className="hidden sm:inline-block">Twitter</span>
+            </p>
+          </a>
+          <a
+            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-400 bg-green-200 px-5 py-1 text-sm text-slate-600 shadow-md transition-colors hover:bg-green-300 hover:border-gray-800"
+            href="https://discord.gg/uUJkMHYngH"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Discord />
+            <p>
+              <span className="hidden sm:inline-block">Discord</span>
             </p>
           </a>
         </div>
@@ -146,7 +198,7 @@ export default async function Home() {
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>
-            Enroll below, receive updates for our 2024 launch!
+          {t('Enroll')}
           </Balancer>
         </p>
         {/* <br />
@@ -188,53 +240,4 @@ export default async function Home() {
   );
 }
 
-const features = [
-  {
-    title: "Worldclass Expertise",
-    description:
-      "From developers that have built live protocols and architected scalable financial systems; SolidityNirvana is built by professionals, for professionals",
-    demo: (
-      <div className="flex items-center justify-center space-x-20">
-          <Image
-            style={{ borderRadius: '50%', overflow: 'hidden' }}
-            src="/knowledge.png"
-            alt="From Within"
-            width="200"
-            height="200"
-          ></Image>
-      </div>
-    ),
-  },
-  {
-    title: "Slow & Steady",
-    description:
-      "We will guide you on your path to enlightenment, ensuring you achieve full comprehension along the way and providing valuable support where needed",
-    demo: (
-      <div className="flex items-center justify-center space-x-20">
-          <Image
-            style={{ borderRadius: '50%', overflow: 'hidden' }}
-            src="/nature.png"
-            alt="From Within"
-            width="200"
-            height="200"
-          ></Image>
-      </div>
-    ),
-  },
-  {
-    title: "Student Discounts",
-    description:
-      "Students are eligible for discounts; our goal is to foster the next generation of talented and well-trained engineers",
-    demo: (
-      <div className="flex items-center justify-center space-x-20">
-          <Image
-            style={{ borderRadius: '50%', overflow: 'hidden' }}
-            src="/school.png"
-            alt="From Within"
-            width="200"
-            height="200"
-          ></Image>
-      </div>
-    ),
-  },
-];
+

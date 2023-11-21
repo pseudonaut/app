@@ -42,6 +42,10 @@ export default function Dashboard({ session }: { session: Session | null }) {
         >
           <Balancer>{email}</Balancer>
         </h3>
+        <br />
+        <h1>
+          Language
+        </h1>
       </div>
     </>
   );
