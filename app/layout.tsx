@@ -41,7 +41,10 @@ export default async function RootLayout({children, params: {locale}}) {
         <main className="flex min-h-screen w-full flex-col items-center py-32">
           {children}
         </main>
-        <Footer />
+        <Suspense fallback="...">
+          {/* @ts-expect-error Server Component */}
+          <Footer />
+        </Suspense>
         <Analytics />
         <Ganalytics />
       </body>
