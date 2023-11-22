@@ -6,6 +6,7 @@ import { sfPro, inter } from "./fonts";
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
+import {notFound} from 'next/navigation';
 
 export const metadata = {
   title: "SolidityNirvana",
@@ -22,13 +23,15 @@ export const metadata = {
   themeColor: "#000",
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const locales = [
+  'en', 'ja', 'zh', 'de', 'hi', 'fr', 'ko', 'pt', 'it', 'es', 'id', 'nl', 'tr', 'tl', 'pl',
+  'sv', 'bg', 'ro', 'ar', 'cs', 'el', 'fi', 'hr', 'ms', 'sk', 'da', 'ta', 'uk', 'ru'
+]
+
+export default async function RootLayout({children, params: {locale}}) {
+  // if (!locales.includes(locale as any)) notFound();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-orange-100 via-green to-green-200" />
         <Suspense fallback="...">
