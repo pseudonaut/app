@@ -24,5 +24,14 @@
         "Episode": "Épisode",
         "Agenda": "Ordre du jour",
         "Back": "Retour"
-    }
+    },
+    "Enroll": {
+        "2 Free": "2 épisodes gratuits - Commencez votre voyage",
+        "Solidity Nirvana": "Solidité Nirvana",
+        "Enroll": "Inscrivez-vous - Gratuit",
+        "Awaken": "Éveillez votre esprit. Réalisez votre potentiel. Rejoignez notre newsletter.",
+        "Welcome": "Bienvenue à",
+        "Begin": "Commencer l'apprentissage",
+        "AwakenLess": "Éveillez votre esprit. Réalisez votre potentiel."
+      }
   }

@@ -24,5 +24,14 @@
         "Episode": "Episodyo",
         "Agenda": "Agenda",
         "Back": "Bumalik"
-    }
+    },
+    "Enroll": {
+        "2 Free": "2 Libreng Episodes - Simulan ang Iyong Paglalakbay",
+        "Solidity Nirvana": "Solidity Nirvana",
+        "Enroll": "Mag-enroll - Libre",
+        "Awaken": "Gisingin ang iyong isip. Matanto ang iyong potensyal. Sumali sa aming newsletter.",
+        "Welcome": "Maligayang pagdating sa",
+        "Begin": "Simulang Matuto",
+        "AwakenLess": "Gisingin ang iyong isip. Matanto ang iyong potensyal."
+      }
   }

@@ -1,15 +1,16 @@
 "use client";
 
-import { signOut } from "next-auth/react";
-import { AlignStartHorizontal, Video, LogOut } from "lucide-react";
-import Popover from "@/components/shared/popover";
 import Image from "next/image";
 import { Session } from "next-auth";
 import React, { useState } from 'react';
 import { imageSequence_01 } from "./enrollRotation";
 import { useSignInModal } from "../layout/sign-in-modal";
 
+import {useTranslations} from 'next-intl';
+
 export default function Enroll({ session, membership }: { session: Session | null, membership: string }) {
+
+  const t = useTranslations('Enroll');
 
   const { SignInModal, setShowSignInModal } = useSignInModal();
 
@@ -62,12 +63,12 @@ export default function Enroll({ session, membership }: { session: Session | nul
 
         <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
           <p className="text-sm font-semibold uppercase tracking-widest">
-            2 Free Episodes - Start Your Journey
+            {t('2 Free')}
           </p>
 
           <h2 className="mt-6 font-black uppercase">
             <span className="text-4-xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
-              SOLIDITY NIRVANA
+            {t('Solidity Nirvana')}
             </span>
           </h2>
 
@@ -75,11 +76,11 @@ export default function Enroll({ session, membership }: { session: Session | nul
             className="mt-8 inline-block w-full bg-black py-4 text-sm font-bold uppercase tracking-widest text-white hover:bg-orange-500 active:bg-orange-500 transition-colors duration-500"
             onClick={() => setShowSignInModal(true)}
           >
-            ENROLL - FREE
+            {t('Enroll')}
           </button>
 
           <p className="mt-8 text-xs font-medium uppercase text-gray-400">
-            Awaken your mind. Realize your potential. Join our newsletter.
+            {t('Awaken')}
           </p>
         </div>
 
@@ -152,12 +153,12 @@ export default function Enroll({ session, membership }: { session: Session | nul
 
         <div className="p-4 text-center sm:p-6 md:col-span-4 lg:p-8">
           <p className="text-sm font-semibold uppercase tracking-widest">
-            Welcome to
+            {t('Welcome')}
           </p>
 
           <h2 className="mt-6 font-black uppercase">
             <span className="text-4-xl bg-gradient-to-r from-orange-400 via-orange-600 to-yellow-800 bg-clip-text font-extrabold text-transparent sm:text-5xl">
-              SOLIDITY NIRVANA
+              {t('Solidity Nirvana')}
             </span>
           </h2>
 
@@ -166,11 +167,11 @@ export default function Enroll({ session, membership }: { session: Session | nul
             href={"/episodes"}
             rel="noreferrer"
           >
-            BEGIN LEARNING
+            {t('Begin')}
           </a>
 
           <p className="mt-8 text-xs font-medium uppercase text-gray-400">
-            Awaken your mind. Realize your potential.
+            {t('AwakenLess')}
           </p>
         </div>
 

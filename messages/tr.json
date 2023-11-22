@@ -24,5 +24,14 @@
       "Episode": "Bölüm",
       "Agenda": "Gündem",
       "Back": "Geri"
+    },
+    "Enroll": {
+      "2 Free": "2 Ücretsiz Bölüm - Yolculuğunuza Başlayın",
+      "Solidity Nirvana": "Solidity Nirvana",
+      "Enroll": "Kaydolun - Ücretsiz",
+      "Awaken": "Zihninizi uyandırın. Potansiyelinizi fark edin. Bültenimize katılın.",
+      "Welcome": "Hoş Geldiniz",
+      "Begin": "Öğrenmeye Başla",
+      "AwakenLess": "Zihninizi uyandırın. Potansiyelinizi fark edin."
     }
   }

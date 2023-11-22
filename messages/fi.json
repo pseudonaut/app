@@ -24,5 +24,14 @@
       "Episode": "Jakso",
       "Agenda": "Ohjelma",
       "Back": "Takaisin"
+    },
+    "Enroll": {
+      "2 Free": "2 Ilmaista Jaksoa - Aloita Matkasi",
+      "Solidity Nirvana": "Solidity Nirvana",
+      "Enroll": "Ilmoittaudu - Ilmaiseksi",
+      "Awaken": "Herätä mielesi. Toteuta potentiaalisi. Liity uutiskirjeeseemme.",
+      "Welcome": "Tervetuloa",
+      "Begin": "Aloita Oppiminen",
+      "AwakenLess": "Herätä mielesi. Toteuta potentiaalisi."
     }
   }

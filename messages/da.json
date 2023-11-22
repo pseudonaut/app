@@ -24,5 +24,14 @@
     "Episode": "Episode",
     "Agenda": "Dagsorden",
     "Back": "Tilbage"
+  },
+  "Enroll": {
+    "2 Free": "2 Gratis Afsnit - Start Din Rejse",
+    "Solidity Nirvana": "Solidity Nirvana",
+    "Enroll": "Tilmeld - Gratis",
+    "Awaken": "Væk din sind. Indse dit potentiale. Tilmeld dig vores nyhedsbrev.",
+    "Welcome": "Velkommen til",
+    "Begin": "Begynd at Lære",
+    "AwakenLess": "Væk din sind. Indse dit potentiale."
   }
 }
