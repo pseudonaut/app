@@ -12,7 +12,10 @@
       "Episodes": "एपिसोड",
       "Dashboard": "डैशबोर्ड",
       "Logout": "लॉग आउट",
-      "Embrace": "कोड को अपनाएं, आत्मा को समृद्ध करें।"
+      "Embrace": "कोड को अपनाएं, आत्मा को समृद्ध करें।",
+      "Welcome": "Solidity Nirvana में आपका स्वागत है",
+      "Sign In": "साइन इन करें",
+      "Sign In With": "के साथ साइन इन करें"
     },
     "Episodes": {
       "Introduction": "परिचय",

@@ -12,7 +12,10 @@
       "Episodes": "Episode",
       "Dashboard": "Dasbor",
       "Logout": "Keluar",
-      "Embrace": "Peluk kode itu, memperkaya jiwa."
+      "Embrace": "Peluk kode itu, memperkaya jiwa.",
+      "Welcome": "Selamat datang di Solidity Nirvana",
+      "Sign In": "Masuk",
+      "Sign In With": "Masuk dengan"
     },
     "Episodes": {
       "Introduction": "Pengantar",

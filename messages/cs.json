@@ -12,7 +12,10 @@
       "Episodes": "Epizody",
       "Dashboard": "Přístrojová deska",
       "Logout": "Odhlásit se",
-      "Embrace": "Objměte kód, obohaťte duši."
+      "Embrace": "Objměte kód, obohaťte duši.",
+      "Welcome": "Vítejte v Solidity Nirvana",
+      "Sign In": "Přihlásit se",
+      "Sign In With": "Přihlásit se pomocí"
     },
     "Episodes": {
       "Introduction": "Úvod",

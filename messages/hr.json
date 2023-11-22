@@ -12,7 +12,10 @@
       "Episodes": "Epizode",
       "Dashboard": "Kontrolna ploča",
       "Logout": "Odjava",
-      "Embrace": "Prihvatite kod, obogatite dušu."
+      "Embrace": "Prihvatite kod, obogatite dušu.",
+      "Welcome": "Dobrodošli u Solidity Nirvana",
+      "Sign In": "Prijavite se",
+      "Sign In With": "Prijavite se putem"
     },
     "Episodes": {
       "Introduction": "Uvod",

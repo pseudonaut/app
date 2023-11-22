@@ -12,7 +12,10 @@
     "Episodes": "Episoder",
     "Dashboard": "Dashboard",
     "Logout": "Log ud",
-    "Embrace": "Omfavn koden, berig sjælen."
+    "Embrace": "Omfavn koden, berig sjælen.",
+    "Welcome": "Velkommen til Solidity Nirvana",
+    "Sign In": "Log ind",
+    "Sign In With": "Log ind med"
   },
   "Episodes": {
     "Introduction": "Introduktion",

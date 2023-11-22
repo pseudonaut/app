@@ -12,7 +12,10 @@
     "Episodes": "Episodes",
     "Dashboard": "Dashboard",
     "Logout": "Logout",
-    "Embrace": "Embrace the code, enrich the soul."
+    "Embrace": "Embrace the code, enrich the soul.",
+    "Welcome": "Welcome to Solidity Nirvana",
+    "Sign In": "Sign In",
+    "Sign In With": "Sign In with"
   },
   "Episodes": {
     "Introduction": "Introduction",

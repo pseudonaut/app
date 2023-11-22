@@ -12,7 +12,10 @@
       "Episodes": "Mga Episodyo",
       "Dashboard": "Dashboard",
       "Logout": "Mag-logout",
-      "Embrace": "Yakapin ang code, payamanin ang kaluluwa."
+      "Embrace": "Yakapin ang code, payamanin ang kaluluwa.",
+      "Welcome": "Maligayang pagdating sa Solidity Nirvana",
+      "Sign In": "Mag-sign In",
+      "Sign In With": "Mag-sign In gamit ang"
     },
     "Episodes": {
         "Introduction": "Panimula",

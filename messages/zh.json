@@ -12,7 +12,10 @@
       "Episodes": "剧集",
       "Dashboard": "仪表板",
       "Logout": "登出",
-      "Embrace": "拥抱代码，丰富灵魂。"
+      "Embrace": "拥抱代码，丰富灵魂。",
+      "Welcome": "欢迎来到Solidity Nirvana",
+      "Sign In": "登录",
+      "Sign In With": "使用以下方式登录"
     },
     "Episodes": {
       "Introduction": "介绍",

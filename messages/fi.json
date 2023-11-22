@@ -12,7 +12,10 @@
       "Episodes": "Jaksot",
       "Dashboard": "Kojelauta",
       "Logout": "Kirjaudu ulos",
-      "Embrace": "Halaus koodille, sielun rikastuminen."
+      "Embrace": "Halaus koodille, sielun rikastuminen.",
+      "Welcome": "Tervetuloa Solidity Nirvanaan",
+      "Sign In": "Kirjaudu sisään",
+      "Sign In With": "Kirjaudu sisään käyttäen"
     },
     "Episodes": {
       "Introduction": "Johdanto",

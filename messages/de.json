@@ -12,7 +12,10 @@
     "Episodes": "Episoden",
     "Dashboard": "Dashboard",
     "Logout": "Abmelden",
-    "Embrace": "Umarme den Code, bereichere die Seele."
+    "Embrace": "Umarme den Code, bereichere die Seele.",
+    "Welcome": "Willkommen bei Solidity Nirvana",
+    "Sign In": "Anmelden",
+    "Sign In With": "Anmelden mit"
   },
   "Episodes": {
     "Introduction": "Einführung",

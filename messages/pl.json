@@ -12,7 +12,10 @@
       "Episodes": "Odcinki",
       "Dashboard": "Panel",
       "Logout": "Wyloguj się",
-      "Embrace": "Przyjmij kod, wzbogać duszę."
+      "Embrace": "Przyjmij kod, wzbogać duszę.",
+      "Welcome": "Witamy w Solidity Nirvana",
+      "Sign In": "Zaloguj się",
+      "Sign In With": "Zaloguj się przy użyciu"
     },
     "Episodes": {
       "Introduction": "Wprowadzenie",

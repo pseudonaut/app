@@ -12,7 +12,10 @@
       "Episodes": "Bölümler",
       "Dashboard": "Gösterge Paneli",
       "Logout": "Çıkış Yap",
-      "Embrace": "Kodu benimse, ruhu zenginleştir."
+      "Embrace": "Kodu benimse, ruhu zenginleştir.",
+      "Welcome": "Solidity Nirvana'ya Hoş Geldiniz",
+      "Sign In": "Giriş Yap",
+      "Sign In With": "İle Giriş Yap"
     },
     "Episodes": {
       "Introduction": "Giriş",

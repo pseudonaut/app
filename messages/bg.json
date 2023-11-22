@@ -12,7 +12,10 @@
       "Episodes": "Епизоди",
       "Dashboard": "Табло",
       "Logout": "Изход",
-      "Embrace": "Прегърни кода, обогати душата."
+      "Embrace": "Прегърни кода, обогати душата.",
+      "Welcome": "Добре дошли в Solidity Nirvana",
+      "Sign In": "Вход",
+      "Sign In With": "Вход с"
     },
     "Episodes": {
       "Introduction": "Въведение",

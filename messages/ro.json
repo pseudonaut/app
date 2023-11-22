@@ -12,7 +12,10 @@
       "Episodes": "Episoade",
       "Dashboard": "Tablou de bord",
       "Logout": "Deconectare",
-      "Embrace": "Îmbrățișează codul, îmbogățește sufletul."
+      "Embrace": "Îmbrățișează codul, îmbogățește sufletul.",
+      "Welcome": "Bine ați venit la Solidity Nirvana",
+      "Sign In": "Autentificare",
+      "Sign In With": "Autentificare cu"
     },
     "Episodes": {
       "Introduction": "Introducere",

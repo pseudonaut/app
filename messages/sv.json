@@ -12,7 +12,10 @@
       "Episodes": "Avsnitt",
       "Dashboard": "Instrumentbräda",
       "Logout": "Logga ut",
-      "Embrace": "Omfamna koden, berika själen."
+      "Embrace": "Omfamna koden, berika själen.",
+      "Welcome": "Välkommen till Solidity Nirvana",
+      "Sign In": "Logga in",
+      "Sign In With": "Logga in med"
     },
     "Episodes": {
       "Introduction": "Introduktion",

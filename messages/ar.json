@@ -12,7 +12,10 @@
       "Episodes": "الحلقات",
       "Dashboard": "لوحة القيادة",
       "Logout": "تسجيل الخروج",
-      "Embrace": "احتضن الكود، أثرِ الروح."
+      "Embrace": "احتضن الكود، أثرِ الروح.",
+      "Welcome": "مرحبًا بك في Solidity Nirvana",
+      "Sign In": "تسجيل الدخول",
+      "Sign In With": "تسجيل الدخول باستخدام"
     },
     "Episodes": {
       "Introduction": "مقدمة",

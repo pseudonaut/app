@@ -12,7 +12,10 @@
       "Episodes": "エピソード",
       "Dashboard": "ダッシュボード",
       "Logout": "ログアウト",
-      "Embrace": "コードを抱きしめて、魂を豊かにしよう。"
+      "Embrace": "コードを抱きしめて、魂を豊かにしよう。",
+      "Welcome": "Solidity Nirvanaへようこそ",
+      "Sign In": "サインイン",
+      "Sign In With": "サインイン方法"
     },
     "Episodes": {
       "Introduction": "導入",

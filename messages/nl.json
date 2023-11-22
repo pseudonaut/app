@@ -12,7 +12,10 @@
     "Episodes": "Afleveringen",
     "Dashboard": "Dashboard",
     "Logout": "Uitloggen",
-    "Embrace": "Omarm de code, verrijk de ziel."
+    "Embrace": "Omarm de code, verrijk de ziel.",
+    "Welcome": "Welkom bij Solidity Nirvana",
+    "Sign In": "Inloggen",
+    "Sign In With": "Inloggen met"
   },
   "Episodes": {
     "Introduction": "Inleiding",
