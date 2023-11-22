@@ -8,6 +8,33 @@
       "Slow & Steady": "Lambat dan Mantap",
       "We will guide": "Kami akan memandu Anda di jalan menuju pencerahan, memastikan Anda memahami sepenuhnya sepanjang jalan dan menyediakan dukungan yang berharga bila diperlukan",
       "Student Discounts": "Diskon Mahasiswa",
-      "Students are eligible": "Mahasiswa berhak mendapatkan diskon; tujuan kami adalah untuk membina generasi berikutnya dari insinyur yang berbakat dan terlatih dengan baik"
+      "Students are eligible": "Mahasiswa berhak mendapatkan diskon; tujuan kami adalah untuk membina generasi berikutnya dari insinyur yang berbakat dan terlatih dengan baik",
+      "Episodes": "Episode",
+      "Dashboard": "Dasbor",
+      "Logout": "Keluar",
+      "Embrace": "Peluk kode itu, memperkaya jiwa.",
+      "Welcome": "Selamat datang di Solidity Nirvana",
+      "Sign In": "Masuk",
+      "Sign In With": "Masuk dengan"
+    },
+    "Episodes": {
+      "Introduction": "Pengantar",
+      "Easy": "Mudah",
+      "Medium": "Sedang",
+      "Hard": "Sulit",
+      "Solutions": "Solusi",
+      "Episodes": "Episode",
+      "Episode": "Episode",
+      "Agenda": "Agenda",
+      "Back": "Kembali"
+    },
+    "Enroll": {
+      "2 Free": "2 Episode Gratis - Mulai Perjalanan Anda",
+      "Solidity Nirvana": "Solidity Nirvana",
+      "Enroll": "Daftar - Gratis",
+      "Awaken": "Bangunkan pikiran Anda. Sadari potensi Anda. Bergabunglah dengan buletin kami.",
+      "Welcome": "Selamat datang di",
+      "Begin": "Mulai Belajar",
+      "AwakenLess": "Bangunkan pikiran Anda. Sadari potensi Anda."
     }
   }

@@ -8,6 +8,33 @@
     "Slow & Steady": "Langsam und stetig",
     "We will guide": "Wir führen Sie auf Ihrem Weg zur Erleuchtung, sorgen für vollständiges Verständnis unterwegs und bieten wertvolle Unterstützung, wo nötig",
     "Student Discounts": "Studentenrabatte",
-    "Students are eligible": "Studenten haben Anspruch auf Rabatte; unser Ziel ist es, die nächste Generation talentierter und gut ausgebildeter Ingenieure zu fördern"
+    "Students are eligible": "Studenten haben Anspruch auf Rabatte; unser Ziel ist es, die nächste Generation talentierter und gut ausgebildeter Ingenieure zu fördern",
+    "Episodes": "Episoden",
+    "Dashboard": "Dashboard",
+    "Logout": "Abmelden",
+    "Embrace": "Umarme den Code, bereichere die Seele.",
+    "Welcome": "Willkommen bei Solidity Nirvana",
+    "Sign In": "Anmelden",
+    "Sign In With": "Anmelden mit"
+  },
+  "Episodes": {
+    "Introduction": "Einführung",
+    "Easy": "Leicht",
+    "Medium": "Mittel",
+    "Hard": "Schwer",
+    "Solutions": "Lösungen",
+    "Episodes": "Episoden",
+    "Episode": "Episode",
+    "Agenda": "Agenda",
+    "Back": "Zurück"
+  },
+  "Enroll": {
+    "2 Free": "2 kostenlose Episoden - Beginnen Sie Ihre Reise",
+    "Solidity Nirvana": "Solidity Nirvana",
+    "Enroll": "Anmelden - Kostenlos",
+    "Awaken": "Erwecken Sie Ihren Geist. Erkennen Sie Ihr Potenzial. Abonnieren Sie unseren Newsletter.",
+    "Welcome": "Willkommen bei",
+    "Begin": "Lernen beginnen",
+    "AwakenLess": "Erwecken Sie Ihren Geist. Erkennen Sie Ihr Potenzial."
   }
 }

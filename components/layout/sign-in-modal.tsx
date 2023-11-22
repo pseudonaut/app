@@ -10,6 +10,8 @@ import {
 import { LoadingDots, Google, Github } from "@/components/shared/icons";
 import Image from "next/image";
 
+import {useTranslations} from 'next-intl';
+
 const SignInModal = ({
   showSignInModal,
   setShowSignInModal,
@@ -19,13 +21,15 @@ const SignInModal = ({
 }) => {
   const [signInClicked, setSignInClicked] = useState(false);
 
+  const t = useTranslations('Home');
+  
   return (
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
       <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border md:border-gray-200">
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center md:px-16">
-          <h3 className="font-display text-2xl font-bold">Sign In</h3>
+          <h3 className="font-display text-2xl font-bold">{t('Sign In')}</h3>
           <p className="text-sm text-gray-500">
-           Welcome to SolidityNirvana
+            {t('Welcome')}
           </p>
         </div>
 
@@ -47,7 +51,7 @@ const SignInModal = ({
             ) : (
               <>
                 <Google className="h-5 w-5" />
-                <p>Sign In with Google</p>
+                <p>{t('Sign In With')} Google</p>
               </>
             )}
           </button>
@@ -69,7 +73,7 @@ const SignInModal = ({
             ) : (
               <>
                 <Github className="h-5 w-5" />
-                <p>Sign In with Github</p>
+                <p>{t('Sign In With')} Github</p>
               </>
             )}
           </button>

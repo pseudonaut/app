@@ -7,31 +7,36 @@ import Popover from "@/components/shared/popover";
 import Image from "next/image";
 import { Session } from "next-auth";
 
+import {useTranslations} from 'next-intl';
+
 export default function UserDropdown({ session }: { session: Session }) {
   const { email, image } = session?.user || {};
   const [openPopover, setOpenPopover] = useState(false);
 
+  const t = useTranslations('Home');
+
   if (!email) return null;
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="flex inline-block text-left">
       <Popover
         content={
           <div className="w-full rounded-md bg-white p-2 sm:w-56">
-            <a href="/dashboard">
-              <button
-                className="relative flex w-full items-center justify-start space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-gray-100"
-              >
-                <AlignStartHorizontal className="h-4 w-4" />
-                <p className="text-sm">Dashboard</p>
-              </button>
-            </a>
+
             <a href="/episodes">
               <button
                 className="relative flex w-full items-center justify-start space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-gray-100"
               >
                 <Video className="h-4 w-4" />
-                <p className="text-sm">Episodes</p>
+                <p className="text-sm">{t('Episodes')}</p>
+              </button>
+            </a>
+            <a href="/dashboard">
+              <button
+                className="relative flex w-full items-center justify-start space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-gray-100"
+              >
+                <AlignStartHorizontal className="h-4 w-4" />
+                <p className="text-sm">{t('Dashboard')}</p>
               </button>
             </a>
             <button
@@ -39,7 +44,7 @@ export default function UserDropdown({ session }: { session: Session }) {
               onClick={() => signOut({callbackUrl: `${window.location.origin}`})}
             >
               <LogOut className="h-4 w-4" />
-              <p className="text-sm">Logout</p>
+              <p className="text-sm">{t('Logout')}</p>
             </button>
           </div>
         }

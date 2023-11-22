@@ -20,7 +20,7 @@ export default function Card({
       }`}
     >
       <div className="flex items-center justify-center">{demo}</div>
-      <div className="mx-auto max-w-md text-center">
+      <div className="mx-auto max-w-md text-center py-5">
         <h2 className="bg-gradient-to-br from-black to-stone-500 bg-clip-text font-display text-xl font-bold text-transparent md:text-3xl md:font-normal">
           <Balancer>{title}</Balancer>
         </h2>

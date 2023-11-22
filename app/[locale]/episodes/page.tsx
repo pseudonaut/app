@@ -4,6 +4,9 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import dbConnect from 'lib/dbConnect'
 import User from "models/User";
 
+import {getLocale} from 'next-intl/server';
+import {NextIntlClientProvider} from 'next-intl';
+
 async function fetchData() {
   await dbConnect();
   
@@ -41,7 +44,10 @@ async function fetchData() {
 }
 
 export default async function Nav() {
+  const locale = await getLocale();
+  const messages = (await import(`../../../messages/${locale}.json`))
+
   const member = await fetchData();
   const session = await getServerSession(authOptions);
-  return <Episodes session={session} membership={member.membership} />;
+  return <NextIntlClientProvider messages={messages}><Episodes session={session} membership={member.membership} /></NextIntlClientProvider>;
 }

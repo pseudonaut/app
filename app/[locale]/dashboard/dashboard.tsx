@@ -5,18 +5,12 @@ import Image from "next/image";
 import { Session } from "next-auth";
 import Generic from "@/components/shared/generic";
 
-import Link from "next/link";
-
-// import { useRouter } from 'next/router';
-
 import {useTranslations} from 'next-intl';
 
 export default function Dashboard({ session }: { session: Session | null }) {
 
   const { email, image } = session?.user || {};
 
-  // const router = useRouter();
-  
   const t = useTranslations('Home');
 
   const locales = [
@@ -84,7 +78,7 @@ export default function Dashboard({ session }: { session: Session | null }) {
         </h1>
         <h3
           // className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-2xl font-bold tracking-[-0.02em] text-transparent opacity-0 drop-shadow-sm md:text-3xl md:leading-[5rem]"
-          className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-2xl"
+          className="animate-fade-up bg-gradient-to-br from-green-800 to-black bg-clip-text text-center font-display text-sm sm:text-2xl"
           style={{ animationFillMode: "forwards" }}
         >
           <Balancer>{email}</Balancer>
@@ -92,16 +86,16 @@ export default function Dashboard({ session }: { session: Session | null }) {
         <br />
         <br />
         <div
-          className="grid grid-cols-3 mt-6 gap-3 animate-fade-up items-center justify-center opacity-0"
+          className="flex grid grid-cols-3 mt-6 gap-3 animate-fade-up items-center justify-center opacity-0"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           {localesFull.map((locale, index) => <a
-            className="items-center justify-center space-x-2 rounded-full border border-gray-400 bg-amber-100 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 hover:bg-amber-300"
+            className="flex items-center justify-center space-x-2 rounded-full border border-gray-400 bg-amber-100 px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800 hover:bg-amber-300"
             key={locale}
             href={"/" + locales[index]}
           >
             <p>
-              <span className="hidden sm:inline-block">{locale}</span>
+              <span className="sm:inline-block">{locale}</span>
             </p>
           </a>)}
         </div>

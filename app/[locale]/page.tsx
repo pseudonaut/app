@@ -12,7 +12,10 @@ import User from "models/User";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-import {getTranslations} from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
+
+import {getLocale} from 'next-intl/server';
+import {NextIntlClientProvider} from 'next-intl';
 
 async function fetchData() {
 
@@ -52,6 +55,9 @@ async function fetchData() {
 }
 
 export default async function Home() {
+
+  const locale = await getLocale();
+  const messages = (await import(`../../messages/${locale}.json`))
 
   const t = await getTranslations('Home');
   const member = await fetchData();
@@ -214,7 +220,7 @@ export default async function Home() {
           </p>
         </a> */}
       </div>
-      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
+      <div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 py-5 md:grid-cols-3 xl:px-0">
         {features.map(({ title, description, demo }) => (
           <Card
             key={title}
@@ -233,8 +239,9 @@ export default async function Home() {
       <br />
       <br />
       <div>
-        <Enroll session={session} membership={member.membership} />
-        {/* <Enroll session={session} /> */}
+        <NextIntlClientProvider messages={messages}>
+          <Enroll session={session} membership={member.membership} />
+        </NextIntlClientProvider>
       </div>
     </>
   );

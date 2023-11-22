@@ -22,7 +22,7 @@ export default function CardEpisode({
   return (
     /// transition duration-500 hover:rotate-6
     <div
-      className={`relative col-span-1 h-80 p-8 overflow-hidden rounded-xl bg-transparent hover:bg-green-200 transition duration-500 hover:rotate-6${
+      className={`relative col-span-1 h-80 p-8 hover:border hover:border-green-600 overflow-hidden rounded-xl bg-transparent hover:bg-green-200 transition duration-500 hover:rotate-6${
         large ? "md:col-span-2" : ""
       }`}
     >

@@ -8,6 +8,33 @@
     "Slow & Steady": "Langzaam en Gestadig",
     "We will guide": "Wij zullen je begeleiden op je pad naar verlichting, ervoor zorgend dat je onderweg volledig begrip bereikt en waar nodig waardevolle ondersteuning bieden",
     "Student Discounts": "Studentenkortingen",
-    "Students are eligible": "Studenten komen in aanmerking voor kortingen; ons doel is om de volgende generatie getalenteerde en goed opgeleide ingenieurs te kweken"
+    "Students are eligible": "Studenten komen in aanmerking voor kortingen; ons doel is om de volgende generatie getalenteerde en goed opgeleide ingenieurs te kweken",
+    "Episodes": "Afleveringen",
+    "Dashboard": "Dashboard",
+    "Logout": "Uitloggen",
+    "Embrace": "Omarm de code, verrijk de ziel.",
+    "Welcome": "Welkom bij Solidity Nirvana",
+    "Sign In": "Inloggen",
+    "Sign In With": "Inloggen met"
+  },
+  "Episodes": {
+    "Introduction": "Inleiding",
+    "Easy": "Makkelijk",
+    "Medium": "Gemiddeld",
+    "Hard": "Moeilijk",
+    "Solutions": "Oplossingen",
+    "Episodes": "Afleveringen",
+    "Episode": "Aflevering",
+    "Agenda": "Agenda",
+    "Back": "Terug"
+  },
+  "Enroll": {
+    "2 Free": "2 gratis afleveringen - Begin je reis",
+    "Solidity Nirvana": "Solidity Nirvana",
+    "Enroll": "Inschrijven - Gratis",
+    "Awaken": "Ontwaak je geest. Besef je potentieel. Word lid van onze nieuwsbrief.",
+    "Welcome": "Welkom bij",
+    "Begin": "Begin met leren",
+    "AwakenLess": "Ontwaak je geest. Besef je potentieel."
   }
 }

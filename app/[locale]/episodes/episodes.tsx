@@ -16,15 +16,19 @@ import Turning from "@/components/shared/turning";
 import { introEpisodes, easyEpisodes } from "./episodesList";
 import "./player.css";
 
+import {useTranslations} from 'next-intl';
+
 export default function Episodes({ session, membership }: { session: Session | null, membership: string }) {
 
-  const [difficulty, setDifficulty] = useState('Easy');
+  const t = useTranslations('Episodes');
+
+  const [difficulty, setDifficulty] = useState(t('Easy'));
   const [episode, setEpisode] = useState('none');
   const [episodeNumber, setEpisodeNumber] = useState('none');
   const [episodeVideo, setEpisodeVideo] = useState('none');
   const [solutionVideo, setSolutionVideo] = useState('none');
   const [image, setImage] = useState('none');
-  const [mode, setMode] = useState('Episode');
+  const [mode, setMode] = useState(t('Episode'));
   const [videoUrl, setVideoUrl] = useState('none');
   const [timestampsEpisode, setTimestampsEpisode] = useState<{ description: string; timestampString: string; timestampNumber: number; }[]>([]);
   const [timestampsSolutions, setTimestampsSolutions] = useState<{ description: string; timestampString: string; timestampNumber: number; }[]>([]);
@@ -66,8 +70,8 @@ export default function Episodes({ session, membership }: { session: Session | n
               </div>
               <br />
 
-              <span className="grid h-10 place-content-center rounded-lg bg-orange-300 text-x">
-                <b>Episodes - {membership}</b>
+              <span className="grid h-10 border-black place-content-center border border-slate-500 rounded-lg bg-orange-300 text-x">
+                <b>{t('Episodes')}</b>
               </span>
 
               <ul className="mt-6 space-y-1">
@@ -84,12 +88,12 @@ export default function Episodes({ session, membership }: { session: Session | n
                 </li> */}
 
                 <li>
-                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy'); setMode("Episode");}}>
+                  <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty(t('Easy')); setMode(t('Episode'));}}>
                     <summary
-                      className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
-                      style={{backgroundColor: difficulty === 'Easy' ? '#bbf7d0' : ''}}
+                      className="flex cursor-pointer items-center border border-green-600 justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
+                      style={{backgroundColor: difficulty === t('Easy') ? '#bbf7d0' : ''}}
                     >
-                      <span className="text-sm font-medium"> <b>Easy</b></span>
+                      <span className="text-sm font-medium"> <b>{t('Easy')}</b></span>
                       <Turning />
                     </summary>
                   </details>
@@ -134,13 +138,13 @@ export default function Episodes({ session, membership }: { session: Session | n
                   <div>
                     <button
                       className="float-right group relative inline-block m-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
-                      onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setMode("Episode")}}
+                      onClick={() => {setEpisode("none"); setImage("none"); setEpisodeNumber("none"); setMode(t('Episode'))}}
                     >
                       <span
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
                       ></span>
                       <span className="relative block border border-current bg-white px-3 py-2">
-                         Back
+                        {t('Back')}
                       </span>
                     </button>
                   </div>
@@ -182,7 +186,7 @@ export default function Episodes({ session, membership }: { session: Session | n
               <div className="player-wrapper">
 
                 {
-                  videoUrl !== '' && (mode === 'Episode' || mode === 'Solutions') && <ReactPlayer
+                  videoUrl !== '' && (mode === t('Episode') || mode === 'Solutions') && <ReactPlayer
                     url={videoUrl}
                     className="react-player"
                     playing
@@ -203,11 +207,11 @@ export default function Episodes({ session, membership }: { session: Session | n
               
               <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                 <Balancer>
-                {mode} Agenda
+                {mode} {t('Agenda')}
                 </Balancer>
               </h2>
               {
-                mode === 'Episode' && timestampsEpisode.map(({ description, timestampString, timestampNumber }, index) => (
+                mode === t('Episode') && timestampsEpisode.map(({ description, timestampString, timestampNumber }, index) => (
                   <span key={index}>
                     <button
                       className="group relative inline-block my-2 text-sm font-medium text-green-700 focus:outline-none focus:ring active:text-indigo-500"
@@ -216,11 +220,13 @@ export default function Episodes({ session, membership }: { session: Session | n
                       <span
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
                       ></span>
-                      <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                        <b>{description}</b> - {timestampString}
+                      <span className="relative block border border-current bg-white text-md p-4 px-4 py-3">
+                        #<b>{index}</b>
+                        <br />
+                        <i>{timestampString}</i>
                       </span>
                     </button>
-                    {index + 1 !== timestampsEpisode.length && ' ... '}
+                    {index + 1 !== timestampsEpisode.length && ' ~ ~ ~ '}
                   </span>
                 ))
               }
@@ -235,7 +241,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-orange-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
                       ></span>
                       <span className="relative block border border-current bg-white p-4 px-4 py-3">
-                        <b>{description}</b> - {timestampString}
+                        <b>{index}</b> - {timestampString}
                       </span>
                     </button>
                     {index + 1 !== timestampsSolutions.length && ' ... '}
@@ -280,7 +286,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                 </div>
               ))}
 
-              {difficulty === 'Easy' && episode === 'none' && easyEpisodes.map(({ title, description, image, episodeVideo, solutionsVideo, episodeTimestamps, solutionsTimestamp }, index) => (
+              {difficulty === t('Easy') && episode === 'none' && easyEpisodes.map(({ title, description, image, episodeVideo, solutionsVideo, episodeTimestamps, solutionsTimestamp }, index) => (
                 <div key={title} onClick={() => {
                   setVideoUrl('');
                   setEpisode(title); 
