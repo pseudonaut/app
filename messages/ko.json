@@ -8,6 +8,21 @@
       "Slow & Steady": "천천히 그리고 꾸준히",
       "We will guide": "우리는 당신을 깨달음의 길로 안내할 것이며, 그 길을 따라 완전한 이해를 달성하고 필요할 때 가치 있는 지원을 제공할 것입니다",
       "Student Discounts": "학생 할인",
-      "Students are eligible": "학생들은 할인을 받을 자격이 있습니다; 우리의 목표는 재능 있고 잘 훈련된 엔지니어의 다음 세대를 양성하는 것입니다"
+      "Students are eligible": "학생들은 할인을 받을 자격이 있습니다; 우리의 목표는 재능 있고 잘 훈련된 엔지니어의 다음 세대를 양성하는 것입니다",
+      "Episodes": "에피소드",
+      "Dashboard": "대시보드",
+      "Logout": "로그아웃",
+      "Embrace": "코드를 포용하고, 영혼을 풍요롭게 하세요."
+    },
+    "Episodes": {
+      "Introduction": "소개",
+      "Easy": "쉬움",
+      "Medium": "중간",
+      "Hard": "어려움",
+      "Solutions": "해결책",
+      "Episodes": "에피소드",
+      "Episode": "에피소드",
+      "Agenda": "안건",
+      "Back": "뒤로"
     }
   }

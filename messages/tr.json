@@ -8,6 +8,21 @@
       "Slow & Steady": "Yavaş ve İstikrarlı",
       "We will guide": "Aydınlanma yolunuzda size rehberlik edeceğiz, yol boyunca tam anlayışınızı sağlayacak ve gerektiğinde değerli destek sağlayacağız",
       "Student Discounts": "Öğrenci İndirimleri",
-      "Students are eligible": "Öğrenciler indirimlerden yararlanabilir; amacımız yetenekli ve iyi eğitimli mühendislerin yeni neslini yetiştirmektir"
+      "Students are eligible": "Öğrenciler indirimlerden yararlanabilir; amacımız yetenekli ve iyi eğitimli mühendislerin yeni neslini yetiştirmektir",
+      "Episodes": "Bölümler",
+      "Dashboard": "Gösterge Paneli",
+      "Logout": "Çıkış Yap",
+      "Embrace": "Kodu benimse, ruhu zenginleştir."
+    },
+    "Episodes": {
+      "Introduction": "Giriş",
+      "Easy": "Kolay",
+      "Medium": "Orta",
+      "Hard": "Zor",
+      "Solutions": "Çözümler",
+      "Episodes": "Bölümler",
+      "Episode": "Bölüm",
+      "Agenda": "Gündem",
+      "Back": "Geri"
     }
   }

@@ -8,6 +8,21 @@
       "Slow & Steady": "Polako i Stabilno",
       "We will guide": "Vodit ćemo vas na putu prema prosvjetljenju, osiguravajući potpuno razumijevanje na putu i pružajući vrijednu podršku kada je potrebno",
       "Student Discounts": "Studentski Popusti",
-      "Students are eligible": "Studenti imaju pravo na popuste; naš cilj je njegovati sljedeću generaciju talentiranih i dobro obučenih inženjera"
+      "Students are eligible": "Studenti imaju pravo na popuste; naš cilj je njegovati sljedeću generaciju talentiranih i dobro obučenih inženjera",
+      "Episodes": "Epizode",
+      "Dashboard": "Kontrolna ploča",
+      "Logout": "Odjava",
+      "Embrace": "Prihvatite kod, obogatite dušu."
+    },
+    "Episodes": {
+      "Introduction": "Uvod",
+      "Easy": "Lako",
+      "Medium": "Srednje",
+      "Hard": "Teško",
+      "Solutions": "Rješenja",
+      "Episodes": "Epizode",
+      "Episode": "Epizoda",
+      "Agenda": "Dnevni red",
+      "Back": "Natrag"
     }
   }

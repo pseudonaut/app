@@ -8,6 +8,21 @@
     "Slow & Steady": "Langzaam en Gestadig",
     "We will guide": "Wij zullen je begeleiden op je pad naar verlichting, ervoor zorgend dat je onderweg volledig begrip bereikt en waar nodig waardevolle ondersteuning bieden",
     "Student Discounts": "Studentenkortingen",
-    "Students are eligible": "Studenten komen in aanmerking voor kortingen; ons doel is om de volgende generatie getalenteerde en goed opgeleide ingenieurs te kweken"
+    "Students are eligible": "Studenten komen in aanmerking voor kortingen; ons doel is om de volgende generatie getalenteerde en goed opgeleide ingenieurs te kweken",
+    "Episodes": "Afleveringen",
+    "Dashboard": "Dashboard",
+    "Logout": "Uitloggen",
+    "Embrace": "Omarm de code, verrijk de ziel."
+  },
+  "Episodes": {
+    "Introduction": "Inleiding",
+    "Easy": "Makkelijk",
+    "Medium": "Gemiddeld",
+    "Hard": "Moeilijk",
+    "Solutions": "Oplossingen",
+    "Episodes": "Afleveringen",
+    "Episode": "Aflevering",
+    "Agenda": "Agenda",
+    "Back": "Terug"
   }
 }

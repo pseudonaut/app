@@ -8,6 +8,21 @@
     "Slow & Steady": "Langsam und stetig",
     "We will guide": "Wir führen Sie auf Ihrem Weg zur Erleuchtung, sorgen für vollständiges Verständnis unterwegs und bieten wertvolle Unterstützung, wo nötig",
     "Student Discounts": "Studentenrabatte",
-    "Students are eligible": "Studenten haben Anspruch auf Rabatte; unser Ziel ist es, die nächste Generation talentierter und gut ausgebildeter Ingenieure zu fördern"
+    "Students are eligible": "Studenten haben Anspruch auf Rabatte; unser Ziel ist es, die nächste Generation talentierter und gut ausgebildeter Ingenieure zu fördern",
+    "Episodes": "Episoden",
+    "Dashboard": "Dashboard",
+    "Logout": "Abmelden",
+    "Embrace": "Umarme den Code, bereichere die Seele."
+  },
+  "Episodes": {
+    "Introduction": "Einführung",
+    "Easy": "Leicht",
+    "Medium": "Mittel",
+    "Hard": "Schwer",
+    "Solutions": "Lösungen",
+    "Episodes": "Episoden",
+    "Episode": "Episode",
+    "Agenda": "Agenda",
+    "Back": "Zurück"
   }
 }

@@ -8,6 +8,21 @@
       "Slow & Steady": "Lento e Costante",
       "We will guide": "Ti guideremo sul tuo cammino verso l'illuminazione, assicurandoti una piena comprensione lungo la via e fornendo supporto prezioso dove necessario",
       "Student Discounts": "Sconti per Studenti",
-      "Students are eligible": "Gli studenti hanno diritto a sconti; il nostro obiettivo è di coltivare la prossima generazione di ingegneri talentuosi e ben formati"
+      "Students are eligible": "Gli studenti hanno diritto a sconti; il nostro obiettivo è di coltivare la prossima generazione di ingegneri talentuosi e ben formati",
+      "Episodes": "Episodi",
+      "Dashboard": "Cruscotto",
+      "Logout": "Disconnettersi",
+      "Embrace": "Abbraccia il codice, arricchisci l'anima."
+    },
+    "Episodes": {
+      "Introduction": "Introduzione",
+      "Easy": "Facile",
+      "Medium": "Medio",
+      "Hard": "Difficile",
+      "Solutions": "Soluzioni",
+      "Episodes": "Episodi",
+      "Episode": "Episodio",
+      "Agenda": "Agenda",
+      "Back": "Indietro"
     }
   }

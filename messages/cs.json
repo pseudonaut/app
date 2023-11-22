@@ -8,6 +8,21 @@
       "Slow & Steady": "Pomalu a Stabilně",
       "We will guide": "Povedeme vás na cestě k osvícení, zajistíme vaše úplné pochopení po cestě a poskytneme cennou podporu, když je to potřeba",
       "Student Discounts": "Slevy pro Studenty",
-      "Students are eligible": "Studenti mají nárok na slevy; naším cílem je podporovat příští generaci talentovaných a dobře vyškolených inženýrů"
+      "Students are eligible": "Studenti mají nárok na slevy; naším cílem je podporovat příští generaci talentovaných a dobře vyškolených inženýrů",
+      "Episodes": "Epizody",
+      "Dashboard": "Přístrojová deska",
+      "Logout": "Odhlásit se",
+      "Embrace": "Objměte kód, obohaťte duši."
+    },
+    "Episodes": {
+      "Introduction": "Úvod",
+      "Easy": "Snadné",
+      "Medium": "Střední",
+      "Hard": "Těžké",
+      "Solutions": "Řešení",
+      "Episodes": "Epizody",
+      "Episode": "Epizoda",
+      "Agenda": "Program",
+      "Back": "Zpět"
     }
   }

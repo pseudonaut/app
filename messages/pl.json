@@ -8,6 +8,21 @@
       "Slow & Steady": "Powoli i Równo",
       "We will guide": "Pokierujemy cię na twojej drodze do oświecenia, zapewniając pełne zrozumienie po drodze oraz dostarczając cenne wsparcie tam, gdzie będzie to potrzebne",
       "Student Discounts": "Zniżki Studenckie",
-      "Students are eligible": "Studenci mają prawo do zniżek; naszym celem jest wspieranie następnego pokolenia utalentowanych i dobrze wyszkolonych inżynierów"
+      "Students are eligible": "Studenci mają prawo do zniżek; naszym celem jest wspieranie następnego pokolenia utalentowanych i dobrze wyszkolonych inżynierów",
+      "Episodes": "Odcinki",
+      "Dashboard": "Panel",
+      "Logout": "Wyloguj się",
+      "Embrace": "Przyjmij kod, wzbogać duszę."
+    },
+    "Episodes": {
+      "Introduction": "Wprowadzenie",
+      "Easy": "Łatwy",
+      "Medium": "Średni",
+      "Hard": "Trudny",
+      "Solutions": "Rozwiązania",
+      "Episodes": "Odcinki",
+      "Episode": "Odcinek",
+      "Agenda": "Agenda",
+      "Back": "Wstecz"
     }
   }

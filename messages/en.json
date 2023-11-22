@@ -8,6 +8,21 @@
     "Slow & Steady": "Slow & Steady",
     "We will guide": "We will guide you on your path to enlightenment, ensuring you achieve full comprehension along the way and providing valuable support where needed",
     "Student Discounts": "Student Discounts",
-    "Students are eligible": "Students are eligible for discounts; our goal is to foster the next generation of talented and well-trained engineers"
+    "Students are eligible": "Students are eligible for discounts; our goal is to foster the next generation of talented and well-trained engineers",
+    "Episodes": "Episodes",
+    "Dashboard": "Dashboard",
+    "Logout": "Logout",
+    "Embrace": "Embrace the code, enrich the soul."
+  },
+  "Episodes": {
+    "Introduction": "Introduction",
+    "Easy": "Easy",
+    "Medium": "Medium",
+    "Hard": "Hard",
+    "Solutions": "Solutions",
+    "Episodes": "Episodes",
+    "Episode": "Episode",
+    "Agenda": "Agenda",
+    "Back": "Back"
   }
 }

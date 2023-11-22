@@ -16,7 +16,11 @@ import Turning from "@/components/shared/turning";
 import { introEpisodes, easyEpisodes } from "./episodesList";
 import "./player.css";
 
+import {useTranslations} from 'next-intl';
+
 export default function Episodes({ session, membership }: { session: Session | null, membership: string }) {
+
+  const t = useTranslations('Episodes');
 
   const [difficulty, setDifficulty] = useState('Easy');
   const [episode, setEpisode] = useState('none');
@@ -66,8 +70,8 @@ export default function Episodes({ session, membership }: { session: Session | n
               </div>
               <br />
 
-              <span className="grid h-10 place-content-center rounded-lg bg-orange-300 text-x">
-                <b>Episodes - {membership}</b>
+              <span className="grid h-10 border-black place-content-center border border-slate-500 rounded-lg bg-orange-300 text-x">
+                <b>{t('Episodes')}</b>
               </span>
 
               <ul className="mt-6 space-y-1">
@@ -86,10 +90,10 @@ export default function Episodes({ session, membership }: { session: Session | n
                 <li>
                   <details className="group [&_summary::-webkit-details-marker]:hidden" onClick={() => {setEpisode('none'); setDifficulty('Easy'); setMode("Episode");}}>
                     <summary
-                      className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
+                      className="flex cursor-pointer items-center border border-green-600 justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-green-200 hover:text-gray-700"
                       style={{backgroundColor: difficulty === 'Easy' ? '#bbf7d0' : ''}}
                     >
-                      <span className="text-sm font-medium"> <b>Easy</b></span>
+                      <span className="text-sm font-medium"> <b>{t('Easy')}</b></span>
                       <Turning />
                     </summary>
                   </details>
@@ -140,7 +144,7 @@ export default function Episodes({ session, membership }: { session: Session | n
                         className="absolute inset-0 translate-x-0.5 translate-y-0.5 bg-green-600 transition-transform group-hover:translate-y-0 group-hover:translate-x-0"
                       ></span>
                       <span className="relative block border border-current bg-white px-3 py-2">
-                         Back
+                        {t('Back')}
                       </span>
                     </button>
                   </div>
@@ -203,7 +207,7 @@ export default function Episodes({ session, membership }: { session: Session | n
               
               <h2 className="bg-gradient-to-br from-black to-grey-800 bg-clip-text font-display text-xl font-bold text-transparent md:text-1xl md:font-normal">
                 <Balancer>
-                {mode} Agenda
+                {mode} {t('Agenda')}
                 </Balancer>
               </h2>
               {

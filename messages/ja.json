@@ -8,6 +8,21 @@
       "Slow & Steady": "ゆっくりと着実に",
       "We will guide": "啓蒙への道をガイドし、理解を深めながら必要に応じて貴重なサポートを提供します",
       "Student Discounts": "学生割引",
-      "Students are eligible": "学生は割引の対象となります。私たちの目標は、才能があり、訓練されたエンジニアの次世代を育てることです"
+      "Students are eligible": "学生は割引の対象となります。私たちの目標は、才能があり、訓練されたエンジニアの次世代を育てることです",
+      "Episodes": "エピソード",
+      "Dashboard": "ダッシュボード",
+      "Logout": "ログアウト",
+      "Embrace": "コードを抱きしめて、魂を豊かにしよう。"
+    },
+    "Episodes": {
+      "Introduction": "導入",
+      "Easy": "簡単",
+      "Medium": "普通",
+      "Hard": "難しい",
+      "Solutions": "解決策",
+      "Episodes": "エピソード",
+      "Episode": "エピソード",
+      "Agenda": "アジェンダ",
+      "Back": "戻る"
     }
   }

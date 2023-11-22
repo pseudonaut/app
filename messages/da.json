@@ -8,6 +8,21 @@
     "Slow & Steady": "Langsom og Stabil",
     "We will guide": "Vi vil guide dig på din vej til oplysning, sikre din fulde forståelse undervejs og give værdifuld støtte hvor det er nødvendigt",
     "Student Discounts": "Studierabatter",
-    "Students are eligible": "Studerende er berettiget til rabatter; vores mål er at fremme den næste generation af talentfulde og veluddannede ingeniører"
+    "Students are eligible": "Studerende er berettiget til rabatter; vores mål er at fremme den næste generation af talentfulde og veluddannede ingeniører",
+    "Episodes": "Episoder",
+    "Dashboard": "Dashboard",
+    "Logout": "Log ud",
+    "Embrace": "Omfavn koden, berig sjælen."
+  },
+  "Episodes": {
+    "Introduction": "Introduktion",
+    "Easy": "Let",
+    "Medium": "Middel",
+    "Hard": "Svær",
+    "Solutions": "Løsninger",
+    "Episodes": "Episoder",
+    "Episode": "Episode",
+    "Agenda": "Dagsorden",
+    "Back": "Tilbage"
   }
 }
