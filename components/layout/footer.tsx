@@ -26,12 +26,13 @@ export default async function Footer() {
           <p className="text-gray-400 text-xs mt-2">
             <i>SOLIDITYNIRVANA LLC © 2023 </i>
             <br />
-            <a href="/terms" className="text-orange-400 hover:text-orange-600">Terms of Use</a> | <a href="/privacy" className="text-green-400 hover:text-green-500">Privacy Policy</a>
+            <a href="/terms" className="text-orange-400 hover:text-orange-600">Terms of Use</a> - <a href="/privacy" className="text-green-400 hover:text-green-500">Privacy Policy</a> - <a href="mailto:hello@soliditynirvana.com" className="text-cyan-400 hover:text-cyan-600"> Contact</a>
           </p>
           <br />
           <p className="text-gray-500 text-sm mt-2">
             {t('Embrace')}
           </p>
+
         </div>
     </div>
   );
