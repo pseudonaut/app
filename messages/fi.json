@@ -16,7 +16,7 @@
       "Welcome": "Tervetuloa Solidity Nirvanaan",
       "Sign In": "Kirjaudu sisään",
       "Sign In With": "Kirjaudu sisään käyttäen",
-      "Opt": "Ilmoittautumalla tähän kurssiin hyväksyt sähköpostien vastaanottamisen koskien Solidity Nirvana -alustaa! Voit lopettaa näiden sähköpostien vastaanottamisen milloin tahansa napsauttamalla 'Peruuta tilaus' -painiketta sähköpostissamme."
+      "Agree": "Kirjautumalla hyväksyt sekä alla olevat käyttöehdot että tietosuojakäytännön."
     },
     "Episodes": {
       "Introduction": "Johdanto",
