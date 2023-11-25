@@ -89,8 +89,13 @@ const SignInModal = ({
         <div className="flex flex-col space-y-4 bg-gray-50 pb-4 md:px-16">
 
           <i className="text-xs text-center text-slate-300">
-            {t('Opt')}
+            {t('Agree')}
           </i>
+          <p className="text-gray-400 text-center text-xs mt-2">
+            <i>SOLIDITYNIRVANA LLC © 2023 </i>
+            <br />
+            <a href="/terms" className="text-orange-400 hover:text-orange-600">Terms of Use</a> | <a href="/privacy" className="text-green-400 hover:text-green-500">Privacy Policy</a>
+          </p>
         </div>
         
       </div>
