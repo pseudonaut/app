@@ -27,6 +27,13 @@ const SignInModal = ({
     <Modal showModal={showSignInModal} setShowModal={setShowSignInModal}>
       <div className="w-full overflow-hidden shadow-xl md:max-w-md md:rounded-2xl md:border md:border-gray-200">
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center md:px-16">
+            <Image
+              src="/SNLogoClear.png"
+              alt="SN logo"
+              width="150"
+              height="150"
+              className="rounded-sm"
+            ></Image>
           <h3 className="font-display text-2xl font-bold">{t('Sign In')}</h3>
           <p className="text-sm text-gray-500">
             {t('Welcome')}
@@ -77,6 +84,18 @@ const SignInModal = ({
               </>
             )}
           </button>
+        </div>
+
+        <div className="flex flex-col space-y-4 bg-gray-50 pb-4 md:px-16">
+
+          <i className="text-xs text-center text-slate-300">
+            {t('Agree')}
+          </i>
+          <p className="text-gray-400 text-center text-xs mt-2">
+            <i>SOLIDITYNIRVANA LLC © 2023 </i>
+            <br />
+            <a href="/terms" className="text-orange-400 hover:text-orange-600">Terms of Use</a> - <a href="/privacy" className="text-green-400 hover:text-green-500">Privacy Policy</a> - <a href="mailto:hello@soliditynirvana.com" className="text-cyan-400 hover:text-cyan-600"> Contact</a>
+          </p>
         </div>
         
       </div>
