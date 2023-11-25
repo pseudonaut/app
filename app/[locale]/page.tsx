@@ -33,6 +33,9 @@ async function fetchData() {
 
   if (!result) {
 
+    // process.env.SENDY_KEY
+    // process.env.SENDY_LIST
+
     // User not found, create and insert a new user
     const newUser = new User({
       email: session.user.email,
@@ -41,6 +44,21 @@ async function fetchData() {
 
     try {
       const savedUser = await newUser.save();
+      const email = session.user.email;
+      const namePart = email.split('@')[0];
+      const sanitized = namePart.replace(/[^a-zA-Z]/g, '');
+      const response = await fetch('https://marketing.soliditynirvana.com/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+          name: sanitized,
+          api_key: process.env.SENDY_KEY,
+          email: session.user.email,
+          list: process.env.SENDY_LIST,
+        }),
+      });
       return { status: false, membership: savedUser.membership };
     } catch (error) {
       console.error('Error creating and saving user:', error);
