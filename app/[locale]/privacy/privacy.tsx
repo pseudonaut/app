@@ -61,7 +61,7 @@ export default function Privacy() {
                 <p>Under the CCPA, among other rights, California consumers have the right to:</p>
                 <p>Request that a business that collects a consumer{"'"}s personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.</p>
                 <p>Request that a business delete any personal data about the consumer that a business has collected.</p>
-                <p>Request that a business that sells a consumer{"'"}s personal data, not sell the consumer's personal data.</p>
+                <p>Request that a business that sells a consumer{"'"}s personal data, not sell the consumer{"'"}s personal data.</p>
                 <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.</p>
 
                 <h2 className="text-2xl font-semibold text-gray-800 mt-5">GDPR Data Protection Rights</h2>
