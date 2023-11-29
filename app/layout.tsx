@@ -48,7 +48,7 @@ export default async function RootLayout({children, params: {locale}}) {
                 dataLayer.push(arguments);
               }
               gtag('js', new Date());
-              gtag('config', 'AW-11406019257');
+              gtag('config', process.env.NEXT_PUBLIC_GTM);
             }}
           />
       </Head>
