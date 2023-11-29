@@ -7,6 +7,7 @@ import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 import {notFound} from 'next/navigation';
+import Head from 'next/head'; // Import the 'head' component
 
 export const metadata = {
   title: "SolidityNirvana",
@@ -32,6 +33,19 @@ export default async function RootLayout({children, params: {locale}}) {
   // if (!locales.includes(locale as any)) notFound();
   return (
     <html lang={locale}>
+      <Head>
+            <script
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                    })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTM}');
+                  `,
+                }}
+              />
+      </Head>
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-orange-100 via-green to-green-200" />
         <Suspense fallback="...">
