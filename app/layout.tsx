@@ -8,7 +8,6 @@ import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import Ganalytics from './ganalytics';
 import cx from "classnames";
-import Head from "next/head";
 
 interface Window {
   dataLayer: any[];
@@ -38,8 +37,6 @@ const locales = [
 export default async function RootLayout({children, params: {locale}}) {
   return (
     <html lang={locale}>
-      <Head>
-      </Head>
       <Script 
         strategy="afterInteractive"
         src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GTM}

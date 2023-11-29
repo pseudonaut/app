@@ -56,6 +56,7 @@ async function fetchData() {
           list: process.env.SENDY_LIST,
         }),
       });
+      window.gtag('event', 'conversion', {'send_to': process.env.NEXT_PUBLIC_GTM + '/' + process.env.NEXT_PUBLIC_EVENT});
       return { status: false, membership: savedUser.membership };
     } catch (error) {
       console.error('Error creating and saving user:', error);
