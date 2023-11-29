@@ -33,9 +33,6 @@ async function fetchData() {
 
   if (!result) {
 
-    // process.env.SENDY_KEY
-    // process.env.SENDY_LIST
-
     // User not found, create and insert a new user
     const newUser = new User({
       email: session.user.email,
