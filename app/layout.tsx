@@ -1,13 +1,18 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import Ganalytics from './ganalytics';
-import cx from "classnames";
 import { sfPro, inter } from "./fonts";
+import { Suspense } from "react";
+import Script from 'next/script';
+
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
-import { Suspense } from "react";
-import {notFound} from 'next/navigation';
-import Head from 'next/head'; // Import the 'head' component
+import Ganalytics from './ganalytics';
+import cx from "classnames";
+
+interface Window {
+  dataLayer: any[];
+  gtag: (...args: any[]) => void;
+}
 
 export const metadata = {
   title: "SolidityNirvana",
@@ -30,22 +35,17 @@ const locales = [
 ]
 
 export default async function RootLayout({children, params: {locale}}) {
-  // if (!locales.includes(locale as any)) notFound();
   return (
     <html lang={locale}>
-      <Head>
-            <script
-                dangerouslySetInnerHTML={{
-                  __html: `
-                    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-                    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                    })(window,document,'script','dataLayer', '${process.env.NEXT_PUBLIC_GTM}');
-                  `,
-                }}
-              />
-      </Head>
+      <Script 
+        strategy="afterInteractive"
+        src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GTM}
+        onLoad={() => {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag('js', new Date());
+          window.gtag('config', process.env.NEXT_PUBLIC_GTM);
+        }}
+      />
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-orange-100 via-green to-green-200" />
         <Suspense fallback="...">
@@ -61,15 +61,11 @@ export default async function RootLayout({children, params: {locale}}) {
         </Suspense>
         <Analytics />
         <Ganalytics />
-        {/* Add the noscript iframe to the body */}
-        <noscript>
-          <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM}`}
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM}" height="0" width="0" style="display: none; visibility: hidden;" />`,
+          }}
+        />
       </body>
     </html>
   );
