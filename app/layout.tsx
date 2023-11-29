@@ -37,15 +37,6 @@ const locales = [
 export default async function RootLayout({children, params: {locale}}) {
   return (
     <html lang={locale}>
-      <Script 
-        strategy="afterInteractive"
-        src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GTM}
-        onLoad={() => {
-          window.dataLayer = window.dataLayer || [];
-          window.gtag('js', new Date());
-          window.gtag('config', process.env.NEXT_PUBLIC_GTM);
-        }}
-      />
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-orange-100 via-green to-green-200" />
         <Suspense fallback="...">
@@ -61,11 +52,6 @@ export default async function RootLayout({children, params: {locale}}) {
         </Suspense>
         <Analytics />
         <Ganalytics />
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM}" height="0" width="0" style="display: none; visibility: hidden;" />`,
-          }}
-        />
       </body>
     </html>
   );
