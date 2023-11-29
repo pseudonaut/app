@@ -45,11 +45,8 @@ export default async function RootLayout({children, params: {locale}}) {
         src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GTM}
         onLoad={() => {
           window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', process.env.NEXT_PUBLIC_GTM);
+          window.gtag('js', new Date());
+          window.gtag('config', process.env.NEXT_PUBLIC_GTM);
         }}
       />
       <body className={cx(sfPro.variable, inter.variable)}>
