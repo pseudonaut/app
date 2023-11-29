@@ -39,19 +39,19 @@ export default async function RootLayout({children, params: {locale}}) {
   return (
     <html lang={locale}>
       <Head>
-          <Script 
-            strategy="afterInteractive"
-            src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GTM}
-            onLoad={() => {
-              window.dataLayer = window.dataLayer || [];
-              function gtag() {
-                dataLayer.push(arguments);
-              }
-              gtag('js', new Date());
-              gtag('config', process.env.NEXT_PUBLIC_GTM);
-            }}
-          />
       </Head>
+      <Script 
+        strategy="afterInteractive"
+        src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GTM}
+        onLoad={() => {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', process.env.NEXT_PUBLIC_GTM);
+        }}
+      />
       <body className={cx(sfPro.variable, inter.variable)}>
         <div className="fixed h-screen w-full bg-gradient-to-br from-orange-100 via-green to-green-200" />
         <Suspense fallback="...">
