@@ -8,11 +8,7 @@ import UserDropdown from "./user-dropdown";
 import { Session } from "next-auth";
 import { AlignStartHorizontal, Video } from "lucide-react";
 
-import {useTranslations} from 'next-intl';
-
 export default function NavBar({ session }: { session: Session | null }) {
-
-  const t = useTranslations('Home');
 
   const { SignInModal, setShowSignInModal } = useSignInModal();
   const scrolled = useScroll(50);
@@ -30,13 +26,13 @@ export default function NavBar({ session }: { session: Session | null }) {
         <div className="mx-5 flex h-16 max-w-screen-xl items-center justify-between xl:mx-auto">
           <Link href="/" className="flex items-center font-display text-2xl">
             <Image
-              src="/SNLogoClear.png"
-              alt="SN logo"
+              src="/DiscoLogoClear.png"
+              alt="DiscoQuantLogo"
               width="45"
               height="45"
               className="mr-2 rounded-sm"
             ></Image>
-            <p>{t('Solidity Nirvana')}</p>
+            <p>Disco</p>
           </Link>
           <div className="flex items-center justify-between">
 
@@ -49,7 +45,7 @@ export default function NavBar({ session }: { session: Session | null }) {
                 >
                   <Video className="h-4 w-4" />
                   <p>
-                    <span className="hidden sm:inline-block">{t('Episodes')}</span>
+                    <span className="hidden sm:inline-block">Quant</span>
                   </p>
                 </a>
                 </span>
@@ -65,7 +61,7 @@ export default function NavBar({ session }: { session: Session | null }) {
                 >
                   <AlignStartHorizontal className="h-4 w-4" />
                   <p>
-                    <span className="hidden sm:inline-block">{t('Dashboard')}</span>
+                    <span className="hidden sm:inline-block">Disco</span>
                   </p>
                 </a>
                 </span>
@@ -79,7 +75,7 @@ export default function NavBar({ session }: { session: Session | null }) {
                 className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
                 onClick={() => setShowSignInModal(true)}
               >
-                {t('Sign In')}
+                Sign In
               </button>
             )}
             </div>
