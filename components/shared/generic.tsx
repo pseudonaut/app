@@ -3,12 +3,10 @@
 import Balancer from "react-wrap-balancer";
 import Image from "next/image";
 
-import {useTranslations} from 'next-intl';
 import { useSignInModal } from "../layout/sign-in-modal";
 
 export default function Generic() {
   
-  const t = useTranslations('Home');
   const { SignInModal, setShowSignInModal } = useSignInModal();
 
   return (
