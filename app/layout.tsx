@@ -21,9 +21,9 @@ export const metadata = {
     title: "Disco",
     description:
       "Cryptocurrency analytics platform",
-    // creator: "@DiscoQuant",
+    // creator: "@QuantDisco",
   },
-  metadataBase: new URL("https://discoquant.com"),
+  metadataBase: new URL("https://quantdisco.com"),
   themeColor: "#000",
 };
 
