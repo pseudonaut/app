@@ -25,7 +25,7 @@ const SignInModal = ({
         <div className="flex flex-col items-center justify-center space-y-3 border-b border-gray-200 bg-white px-4 py-6 pt-8 text-center md:px-16">
             <Image
               src="/DiscoLogoClear.png"
-              alt="DiscoQuantLogo"
+              alt="QuantDiscoLogo"
               width="150"
               height="150"
               className="rounded-sm"

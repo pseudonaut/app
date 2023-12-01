@@ -135,15 +135,15 @@ export default async function Home() {
           className="animate-fade-up bg-gradient-to-br from-black to-slate-600 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-7xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>Disco</Balancer>
           <Balancer>Quant</Balancer>
+          <Balancer>Disco</Balancer>
         </h1>
         <br />
         <h3
           className="animate-fade-up bg-gradient-to-br from-slate-300 to-slate-400 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>www.discoquant.com</Balancer>
+          <Balancer>www.quantdisco.com</Balancer>
         </h3>
       </div>
       <br />

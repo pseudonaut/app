@@ -22,7 +22,7 @@ export default function Generic() {
         >
           <Image
             src="/DiscoLogoClear.png"
-            alt="DiscoQuantLogo"
+            alt="QuantDiscoLogo"
             width="300"
             height="300"
           ></Image>
