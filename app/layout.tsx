@@ -2,11 +2,9 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { sfPro, inter } from "./fonts";
 import { Suspense } from "react";
-import Script from 'next/script';
 
 import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
-import Ganalytics from './ganalytics';
 import cx from "classnames";
 
 interface Window {
@@ -15,17 +13,17 @@ interface Window {
 }
 
 export const metadata = {
-  title: "SolidityNirvana",
+  title: "Disco",
   description:
-    "The ultimate guide to Solidity",
+    "Cryptocurrency analytics platform",
   twitter: {
     card: "summary_large_image",
-    title: "SolidityNirvana",
+    title: "Disco",
     description:
-      "The ultimate guide to Solidity",
-    creator: "@SolidityNirvana",
+      "Cryptocurrency analytics platform",
+    // creator: "@DiscoQuant",
   },
-  metadataBase: new URL("https://soliditynirvana.com"),
+  metadataBase: new URL("https://discoquant.com"),
   themeColor: "#000",
 };
 
@@ -38,11 +36,7 @@ export default async function RootLayout({children, params: {locale}}) {
   return (
     <html lang={locale}>
       <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-orange-100 via-green to-green-200" />
-        <Suspense fallback="...">
-          {/* @ts-expect-error Server Component */}
-          <Nav />
-        </Suspense>
+        <div className="fixed h-screen w-full bg-gradient-to-br from-blue-100 via-purple to-slate-200" />
         <main className="flex min-h-screen w-full flex-col items-center py-32">
           {children}
         </main>
@@ -51,7 +45,6 @@ export default async function RootLayout({children, params: {locale}}) {
           <Footer />
         </Suspense>
         <Analytics />
-        <Ganalytics />
       </body>
     </html>
   );

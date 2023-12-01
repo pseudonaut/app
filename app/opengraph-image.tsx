@@ -3,7 +3,7 @@ import { ImageResponse } from "next/server";
 import Image from "next/image";
 
 export const runtime = "edge";
-export const alt = "SolidityNirvana - The ultimate guide to Solidity";
+export const alt = "Disco - Cryptocurrency analytics platform";
 export const contentType = "image/png";
 
 export default async function OG() {
@@ -27,8 +27,8 @@ export default async function OG() {
         }}
       >
         <Image
-          src={new URL("../public/SNLogoClearSmaller.png", import.meta.url).toString()}
-          alt="SolidityNirvana Logo"
+          src={new URL("../public/DiscoLogoClear.png", import.meta.url).toString()}
+          alt="Disco Logo"
           tw="w-45 h-25 mb-4 opacity-95"
           fill={true}
         />
