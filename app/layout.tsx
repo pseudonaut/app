@@ -7,11 +7,6 @@ import Nav from "@/components/layout/nav";
 import Footer from "@/components/layout/footer";
 import cx from "classnames";
 
-interface Window {
-  dataLayer: any[];
-  gtag: (...args: any[]) => void;
-}
-
 export const metadata = {
   title: "QuantDisco",
   description:

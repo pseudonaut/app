@@ -6,6 +6,8 @@ import User from "models/User";
 
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import Example from "@/components/charts/Example";
+import Example2 from "@/components/charts/Example2";
 
 async function fetchData() {
 
@@ -63,6 +65,7 @@ export default async function Home() {
   
   const member = await fetchData();
   const session = await getServerSession(authOptions);
+
 
   const features = [
     {
@@ -130,12 +133,15 @@ export default async function Home() {
             style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
           ></Image>
         </div>
-        <h1
-          className="animate-fade-up bg-gradient-to-br from-white to-slate-500 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:leading-[5rem] tracking-[-0.02em] md:text-7xl"
+        <p
+          className="animate-fade-up bg-gradient-to-br from-white to-slate-500 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-7xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer><i className="text-slate-600">Quant</i> Disco</Balancer>
-        </h1>
+        </p>
+        <br />
+        {/* <Example /> */}
+        <Example2 />
         <p
           className="animate-fade-up mt-4 bg-gradient-to-br from-slate-400 to-slate-600 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
