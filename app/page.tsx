@@ -132,19 +132,18 @@ export default async function Home() {
           ></Image>
         </div>
         <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-slate-600 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-7xl"
+          className="animate-fade-up bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:leading-[5rem] tracking-[-0.02em] md:text-7xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           <Balancer>Quant</Balancer>
           <Balancer>Disco</Balancer>
         </h1>
-        <br />
-        <h3
-          className="animate-fade-up bg-gradient-to-br from-slate-300 to-slate-400 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
+        <p
+          className="animate-fade-up mt-4 bg-gradient-to-br from-slate-400 to-slate-800 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>www.quantdisco.com</Balancer>
-        </h3>
+          www.quantdisco.com
+        </p>
       </div>
       <br />
     </>
