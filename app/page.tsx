@@ -115,7 +115,6 @@ export default async function Home() {
   return (
     <>
       <div className="z-10 w-full max-w-xl px-5 xl:px-0">
-        <br />
         <div
           style={{
             display: "flex",
@@ -132,14 +131,19 @@ export default async function Home() {
           ></Image>
         </div>
         <h1
-          className="animate-fade-up bg-gradient-to-br from-black to-slate-500 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:leading-[5rem] tracking-[-0.02em] md:text-7xl"
+          className="animate-fade-up bg-gradient-to-br from-white to-slate-500 bg-clip-text text-center font-display text-4xl font-bold text-transparent opacity-0 drop-shadow-sm md:leading-[5rem] tracking-[-0.02em] md:text-7xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
-          <Balancer>Quant</Balancer>
-          <Balancer>Disco</Balancer>
+          <Balancer><i className="text-slate-600">Quant</i> Disco</Balancer>
         </h1>
         <p
-          className="animate-fade-up mt-4 bg-gradient-to-br from-slate-400 to-slate-800 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
+          className="animate-fade-up mt-4 bg-gradient-to-br from-slate-400 to-slate-600 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
+          style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
+        >
+          Discover real-time cryptocurrency analytics, quantitative studies, and more
+        </p>
+        <p
+          className="animate-fade-up mt-4 bg-gradient-to-br from-slate-600 to-slate-700 bg-clip-text text-center font-display text-2xl font-bold text-transparent opacity-0 drop-shadow-sm md:text-3xl"
           style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
         >
           www.quantdisco.com

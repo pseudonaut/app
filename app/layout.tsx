@@ -13,12 +13,12 @@ interface Window {
 }
 
 export const metadata = {
-  title: "Disco",
+  title: "QuantDisco",
   description:
     "Cryptocurrency analytics platform",
   twitter: {
     card: "summary_large_image",
-    title: "Disco",
+    title: "QuantDisco",
     description:
       "Cryptocurrency analytics platform",
     // creator: "@QuantDisco",
@@ -27,23 +27,14 @@ export const metadata = {
   themeColor: "#000",
 };
 
-const locales = [
-  'en', 'ja', 'zh', 'de', 'hi', 'fr', 'ko', 'pt', 'it', 'es', 'id', 'nl', 'tr', 'tl', 'pl',
-  'sv', 'bg', 'ro', 'ar', 'cs', 'el', 'fi', 'hr', 'ms', 'sk', 'da', 'ta', 'uk', 'ru'
-]
-
 export default async function RootLayout({children, params: {locale}}) {
   return (
     <html lang={locale}>
       <body className={cx(sfPro.variable, inter.variable)}>
-        <div className="fixed h-screen w-full bg-gradient-to-br from-blue-100 via-purple to-slate-200" />
-        <main className="flex min-h-screen w-full flex-col items-center py-32">
+        <div className="fixed h-screen w-full bg-gradient-to-br from-slate-800 via-purple to-gray-950" />
+        <main className="flex min-h-screen w-full flex-col items-center py-20">
           {children}
         </main>
-        <Suspense fallback="...">
-          {/* @ts-expect-error Server Component */}
-          <Footer />
-        </Suspense>
         <Analytics />
       </body>
     </html>
